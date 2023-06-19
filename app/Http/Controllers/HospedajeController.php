@@ -7,6 +7,9 @@ use App\Models\Hospedaje;
 
 class HospedajeController extends Controller
 {
+
+    
+
     public function index()
     {
         // Obtener todos los hospedajes desde la base de datos
@@ -28,11 +31,11 @@ class HospedajeController extends Controller
         $request->validate([
             'nombre' => 'required',
             'ubicacion' => 'required',
-            'check_in' => 'required|date',
-            'check_out' => 'required|date',
+            'check_in' => 'date',
+            'check_out' => 'date',
             'stars' => 'required|integer',
-            'descripcion' => 'required',
-            'foto' => 'required|image',
+            'descripcion' => '',
+            'foto' => 'nullable|image',
         ]);
 
         // Subir la imagen del hospedaje
