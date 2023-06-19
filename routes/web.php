@@ -3,16 +3,12 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-
 use App\Http\Controllers\HospedajeController;
 use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\ComentarioController;
 
 Route::middleware(['auth'])->group(function () {
     // Rutas para hospedajes
-
-
-
     Route::get('/hospedajes/create', [HospedajeController::class, 'create'])->name('hospedajes.create');
     Route::post('/hospedajes', [HospedajeController::class, 'store'])->name('hospedajes.store');
     Route::get('/hospedajes/{hospedaje}', [HospedajeController::class, 'show'])->name('hospedajes.show');
@@ -33,9 +29,6 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/comentarios/{hospedaje}', [ComentarioController::class, 'store'])->name('comentarios.store');
 });
 
-
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,12 +45,9 @@ Here i will define the routes for the different functions
 
 */
 
-
 /*
 this already came done
-
 */
-
 
 Route::get('/', function () {
     return view('welcome');
@@ -72,5 +62,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+// Esta ruta se moverá fuera del middleware 'auth'
+Route::get('/resultados', [HospedajeController::class, 'resultados'])->name('resultados');
+
 
 require __DIR__.'/auth.php';

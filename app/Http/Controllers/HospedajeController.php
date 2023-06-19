@@ -23,12 +23,14 @@ class HospedajeController extends Controller
     public function index()
     
     {
+
+
+        
         // Obtener todos los hospedajes desde la base de datos
         $hospedajes = Hospedaje::all();
 
         // Retornar la vista index.blade.php con los hospedajes
-        return view('hospedajes.index', compact('hospedajes'));
-    }
+        return view('resultados', compact('hospedajes'));    }
 
     public function create()
     {
@@ -64,8 +66,18 @@ class HospedajeController extends Controller
         $hospedaje->save();
 
         // Redireccionar al listado de hospedajes
-        return redirect()->route('hospedajes.index')->with('success', 'Hospedaje creado exitosamente.');
+        return redirect()->route('resultados')->with('success', 'Hospedaje creado exitosamente.');
     }
+
+    public function resultados()
+{
+    // Obtener todos los hospedajes desde la base de datos
+    $hospedajes = Hospedaje::all();
+
+    // Retornar la vista resultados.blade.php con los hospedajes
+    return view('resultados', compact('hospedajes'));
+}
+
 
     // Otros métodos como show(), edit(), update(), destroy() aquí...
 }
