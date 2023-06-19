@@ -8,9 +8,20 @@ use App\Models\Hospedaje;
 class HospedajeController extends Controller
 {
 
+
+    public function show($id)
+{
+    // Obtener el hospedaje desde la base de datos
+    $hospedaje = Hospedaje::find($id);
+
+    // Retornar la vista show.blade.php con el hospedaje
+    return view('hospedajes.show', compact('hospedaje'));
+}
+
     
 
     public function index()
+    
     {
         // Obtener todos los hospedajes desde la base de datos
         $hospedajes = Hospedaje::all();

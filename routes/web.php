@@ -12,11 +12,7 @@ Route::middleware(['auth'])->group(function () {
     // Rutas para hospedajes
 
 
-    Route::get('/hospedajes', function () {
-        return "¡Hola desde la página de hospedajes!";
-    });
-    
-    
+
     Route::get('/hospedajes/create', [HospedajeController::class, 'create'])->name('hospedajes.create');
     Route::post('/hospedajes', [HospedajeController::class, 'store'])->name('hospedajes.store');
     Route::get('/hospedajes/{hospedaje}', [HospedajeController::class, 'show'])->name('hospedajes.show');
