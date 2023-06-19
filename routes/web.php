@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +15,18 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+/*
+Here i will define the routes for the different functions
+
+*/
+
+
+/*
+this already came done
+
+*/
+
 
 Route::get('/', function () {
     return view('welcome');
