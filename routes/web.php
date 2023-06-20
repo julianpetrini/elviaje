@@ -10,7 +10,7 @@ use App\Http\Controllers\ComentarioController;
 Route::middleware(['auth'])->group(function () {
     // Rutas para hospedajes
     Route::get('/hospedajes/create', [HospedajeController::class, 'create'])->name('hospedajes.create');
-    Route::post('/hospedajes', [HospedajeController::class, 'store'])->name('hospedajes.store');
+    Route::post('/hospedajes/store', [HospedajeController::class, 'store'])->name('hospedajes.store');
     Route::get('/hospedajes/{hospedaje}', [HospedajeController::class, 'show'])->name('hospedajes.show');
     Route::get('/hospedajes/{hospedaje}/edit', [HospedajeController::class, 'edit'])->name('hospedajes.edit');
     Route::put('/hospedajes/{hospedaje}', [HospedajeController::class, 'update'])->name('hospedajes.update');

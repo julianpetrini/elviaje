@@ -28,9 +28,9 @@
         <label for="descripcion">Descripción:</label>
         <textarea name="descripcion" id="descripcion"></textarea>
         <br>
-        <label for="foto">Foto:</label>
+       <!-- <label for="foto">Foto:</label>
         <input type="file" name="foto" id="foto">
-        <br>
+        <br>-->
         <button type="submit">Guardar</button>
     </form>
 </body>

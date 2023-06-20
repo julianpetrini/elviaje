@@ -52,7 +52,7 @@ class HospedajeController extends Controller
         ]);
 
         // Subir la imagen del hospedaje
-        $fotoPath = $request->file('foto')->store('public/hospedajes');
+       // $fotoPath = $request->file('foto')->store('public/hospedajes');
 
         // Crear un nuevo hospedaje en la base de datos
         $hospedaje = new Hospedaje();
@@ -62,7 +62,7 @@ class HospedajeController extends Controller
         $hospedaje->check_out = $request->input('check_out');
         $hospedaje->stars = $request->input('stars');
         $hospedaje->descripcion = $request->input('descripcion');
-        $hospedaje->foto = $fotoPath;
+      //  $hospedaje->foto = $fotoPath;
         $hospedaje->save();
 
         // Redireccionar al listado de hospedajes
