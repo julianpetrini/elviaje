@@ -20,12 +20,16 @@ Route::middleware(['auth'])->group(function () {
 
     // Rutas para la agenda
     Route::get('/agenda', [AgendaController::class, 'index'])->name('agenda.index');
-    Route::get('/agenda/create', [AgendaController::class, 'create'])->name('agenda.create');
-    Route::post('/agenda', [AgendaController::class, 'store'])->name('agenda.store');
-    Route::get('/agenda/{agenda}', [AgendaController::class, 'show'])->name('agenda.show');
-    Route::get('/agenda/{agenda}/edit', [AgendaController::class, 'edit'])->name('agenda.edit');
-    Route::put('/agenda/{agenda}', [AgendaController::class, 'update'])->name('agenda.update');
-    Route::delete('/agenda/{agenda}', [AgendaController::class, 'destroy'])->name('agenda.destroy');
+Route::get('/agenda/create', [AgendaController::class, 'create'])->name('agenda.create');
+Route::post('/agenda', [AgendaController::class, 'store'])->name('agenda.store');
+Route::get('/agenda/{agenda}', [AgendaController::class, 'show'])->name('agenda.show');
+Route::get('/agenda/{agenda}/edit', [AgendaController::class, 'edit'])->name('agenda.edit');
+Route::put('/agenda/{agenda}', [AgendaController::class, 'update'])->name('agenda.update');
+Route::delete('/agenda/{agenda}', [AgendaController::class, 'destroy'])->name('agenda.destroy');
+
+
+  
+    
 
     // Rutas para los comentarios
     Route::post('/comentarios/{hospedaje}', [ComentarioController::class, 'store'])->name('comentarios.store');
