@@ -15,6 +15,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/hospedajes/{hospedaje}/edit', [HospedajeController::class, 'edit'])->name('hospedajes.edit');
     Route::put('/hospedajes/{hospedaje}', [HospedajeController::class, 'update'])->name('hospedajes.update');
     Route::delete('/hospedajes/{hospedaje}', [HospedajeController::class, 'destroy'])->name('hospedajes.destroy');
+    
 
     // Rutas para la agenda
     Route::get('/agenda', [AgendaController::class, 'index'])->name('agenda.index');

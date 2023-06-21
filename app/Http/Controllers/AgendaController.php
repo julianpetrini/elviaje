@@ -1,46 +1,79 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Agenda;
-use Illuminate\Http\Request;
 
+
+use Illuminate\Http\Request;
 class AgendaController extends Controller
 {
     public function index()
     {
-        $agenda = Agenda::all();
+        $agenda = Agendas::all();
 
         return view('agenda.index', compact('agenda'));
     }
 
     public function create()
     {
-        // Lógica para mostrar el formulario de creación de planes en la agenda
+        return view('agenda.create');
     }
 
     public function store(Request $request)
     {
-        // Lógica para almacenar el nuevo plan en la base de datos
+        // Validar los datos enviados por el formulario
+        $request->validate([
+            'titulo' => 'required',
+            'descripcion' => 'required',
+            'fecha' => 'required|date',
+        ]);
+
+        // Crear un nuevo plan en la base de datos
+        $agenda = new Agendas();
+        $agenda->titulo = $request->input('titulo');
+        $agenda->descripcion = $request->input('descripcion');
+        $agenda->fecha = $request->input('fecha');
+        $agenda->save();
+
+        // Redireccionar a la página de la agenda
+        return redirect()->route('agenda.index')->with('success', 'Plan creado exitosamente.');
     }
 
-    public function show(Agenda $agenda)
+    public function show(Agendas $agenda)
     {
         return view('agenda.show', compact('agenda'));
     }
 
-    public function edit(Agenda $agenda)
+    public function edit(Agendas $agenda)
     {
         return view('agenda.edit', compact('agenda'));
     }
 
-    public function update(Request $request, Agenda $agenda)
+    public function update(Request $request, Agendas $agenda)
     {
-        // Lógica para actualizar los datos del plan en la base de datos
+        // Validar los datos enviados por el formulario
+        $request->validate([
+            'titulo' => 'required',
+            'descripcion' => 'required',
+            'fecha' => 'required|date',
+        ]);
+
+        // Actualizar los datos del plan en la base de datos
+        $agenda->titulo = $request->input('titulo');
+        $agenda->descripcion = $request->input('descripcion');
+        $agenda->fecha = $request->input('fecha');
+        $agenda->save();
+
+        // Redireccionar a la página de detalle del plan
+        return redirect()->route('agenda.show', $agenda->id)->with('success', 'Plan actualizado exitosamente.');
     }
 
-    public function destroy(Agenda $agenda)
+    public function destroy(Agendas $agenda)
     {
-        // Lógica para eliminar el plan de la agenda
+        // Eliminar el plan de la agenda
+        $agenda->delete();
+
+        // Redireccionar a la página de la agenda
+        return redirect()->route('agenda.index')->with('success', 'Plan eliminado exitosamente.');
     }
 }

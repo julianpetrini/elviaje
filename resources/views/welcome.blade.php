@@ -86,6 +86,10 @@
     <!-- Botón para ir a la creación de formulario de hospedaje -->
     <a href="{{ route('hospedajes.create') }}">Crear Hospedaje</a>
     <a href="{{ route('resultados') }}">Listado de Hoteles</a>
+    <a href="{{ route('agenda.index') }}">Ir a la Agenda</a>
+    <a href="{{ route('agenda.create') }}">Crear Evento</a>
+
+
                                 </div>
                             </div>
                         </div>

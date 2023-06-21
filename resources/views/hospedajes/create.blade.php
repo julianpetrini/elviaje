@@ -33,5 +33,6 @@
         <br>-->
         <button type="submit">Guardar</button>
     </form>
+    <a href="{{ url('/') }}">Volver a la página principal</a>
 </body>
 </html>
