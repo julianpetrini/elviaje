@@ -19,6 +19,9 @@
     <label for="hora_fin">Hora de fin:</label>
     <input type="time" name="hora_fin" id="hora_fin" value="{{ $agenda->hora_fin }}">
 
+    <label for="descripcion">Descripción:</label>
+    <textarea name="descripcion" id="descripcion">{{ $agenda->descripcion }}</textarea>
+
     <!-- Agrega más campos del formulario según la estructura de tu tabla -->
 
     <button type="submit">Guardar cambios</button>
