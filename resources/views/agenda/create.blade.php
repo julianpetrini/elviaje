@@ -1,7 +1,7 @@
 
     <h1>Crear nueva actividad de agenda</h1>
 
-    <form action="{{ route('agenda.store') }}" method="POST">
+    <form action="{{ route('agenda.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <div>

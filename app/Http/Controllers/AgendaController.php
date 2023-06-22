@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Agenda;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use App\Models\Agenda;
 
 class AgendaController extends Controller
 {
@@ -37,26 +38,30 @@ class AgendaController extends Controller
         return view('agenda.create');
     }
 
+    
     public function store(Request $request)
-{
-    $actividad = new Agenda();
-    $actividad->titulo = $request->titulo;
-    $actividad->categoria = $request->categoria;
-    $actividad->fecha = $request->fecha;
-    $actividad->hora_inicio = $request->hora_inicio;
-    $actividad->hora_fin = $request->hora_fin;
-    $actividad->descripcion = $request->descripcion;
-
-    if ($request->hasFile('imagen')) {
-        $imagen = $request->file('imagen');
-        $path = $imagen->store('public/imagenes'); // Almacena la imagen en la carpeta "storage/app/public/imagenes"
-        $actividad->imagen = Storage::url($path);
+    {
+        $actividad = new Agenda();
+        $actividad->titulo = $request->titulo;
+        $actividad->categoria = $request->categoria;
+        $actividad->fecha = $request->fecha;
+        $actividad->hora_inicio = $request->hora_inicio;
+        $actividad->hora_fin = $request->hora_fin;
+        $actividad->descripcion = $request->descripcion;
+    
+        if ($request->hasFile('imagen')) {
+            $imagen = $request->file('imagen');
+            $rutaImagen = $imagen->store('public/imagenes'); // Almacena la imagen en la carpeta "storage/app/public/imagenes"
+            $actividad->imagen = Storage::url($rutaImagen);
+        }
+    
+        $actividad->save();
+    
+        return redirect()->route('agenda.index');
     }
+    
 
-    $actividad->save();
 
-    return redirect()->route('agenda.index');
-}
 
     public function show($id)
     {

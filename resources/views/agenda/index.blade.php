@@ -10,9 +10,8 @@
         <div class="carousel-inner">
             @foreach ($actividades as $actividad)
                 <div class="carousel-item{{ $actividad->id == $actividadProxima->id ? ' active' : '' }}">
-                    <img src="{{ $actividad->imagen }}" alt="{{ $actividad->titulo }}" class="carousel-image">
-                    <div class="carousel-caption">
-                        <h3 class="text-xl font-semibold">{{ $actividad->titulo }}</h3>
+                    <img src="{{ asset($actividad->imagen) }}" alt="{{ $actividad->titulo }}" class="carousel-image">
+                    <h3 class="text-xl font-semibold">{{ $actividad->titulo }}</h3>
                         <p>{{ $actividad->descripcion }}</p>
                     </div>
                 </div>
@@ -36,15 +35,20 @@
     </div>
 </form>
 
+
 @foreach ($actividades->groupBy('fecha')->sortKeys() as $fecha => $actividadesDia)
+
+<a href="{{ route('agenda.show', ['agenda' => $actividad->id]) }}" class="block mb-6">
     @php
-        $fechaTitulo = Carbon\Carbon::parse($fecha)->locale('es')->isoFormat('dddd DD.MM');
+        $fechaTitulo = Carbon\Carbon::parse($fecha)->locale('en')->isoFormat('dddd DD.MM');
     @endphp
     <h2 class="text-2xl font-semibold mb-2">{{ $fechaTitulo }}</h2>
     @foreach ($actividadesDia->sortBy('hora_inicio') as $actividad)
-        <p class="mb-1"><strong>Hora de inicio:</strong> {{ $actividad->hora_inicio }}</p>
-        <p class="mb-4"><strong>Título:</strong> {{ $actividad->titulo }}</p>
+        <p class="mb-1"><strong></strong> {{ substr($actividad->hora_inicio, 0, 5) }}</p>
+        <p class="mb-4"><strong></strong> {{ $actividad->titulo }}</p>
     @endforeach
+</a>
 @endforeach
+
 
 <a href="{{ route('agenda.create') }}" class="bg-green-500 text-white px-4 py-2 rounded-md">Crear nueva actividad de agenda</a>
