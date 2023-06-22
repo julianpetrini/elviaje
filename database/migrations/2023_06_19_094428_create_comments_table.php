@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,6 +16,11 @@ class CreateCommentsTable extends Migration
             $table->text('content');
             $table->string('image')->nullable();
             $table->timestamps();
+
+            $table->foreign('agenda_id')
+                ->references('id')
+                ->on('agenda')
+                ->onDelete('cascade'); // Esto establece la relación y la eliminación en cascada
         });
     }
 
@@ -22,4 +28,4 @@ class CreateCommentsTable extends Migration
     {
         Schema::dropIfExists('comments');
     }
-};
+}
