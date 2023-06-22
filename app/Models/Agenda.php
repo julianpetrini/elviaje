@@ -7,7 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Agenda extends Model
 {
-    protected $table = 'agenda';
-    // ...
-}
+    use HasFactory;
 
+    protected $table = 'agenda';
+
+    public function comentarios()
+    {
+        return $this->hasMany(Comment::class, 'agenda_id');
+
+    }
+
+        // Resto de las definiciones del modelo
+}

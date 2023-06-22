@@ -33,11 +33,26 @@ class AgendaController extends Controller
         return redirect()->route('agenda.index');
     }
 
-    public function show($id)
-    {
-        $agenda = Agenda::find($id);
-        return view('agenda.show', compact('agenda'));
-    }
+   // public function show($id)
+   // {
+    //    $agenda = Agenda::find($id);
+    //    return view('agenda.show', compact('agenda'));
+   // }
+
+   public function show(Agenda $agenda)
+{
+    $hospedaje = $agenda->hospedaje; // Obtén el hospedaje relacionado a la agenda utilizando la relación definida en el modelo Agenda
+
+    return view('agenda.show', compact('agenda', 'hospedaje'));
+}
+
+
+
+
+
+
+
+
     
 
     public function edit(Agenda $agenda)

@@ -3,7 +3,6 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-
 use App\Http\Controllers\HospedajeController;
 use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\ComentarioController;
@@ -18,48 +17,22 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/hospedajes/{hospedaje}', [HospedajeController::class, 'update'])->name('hospedajes.update');
     Route::delete('/hospedajes/{hospedaje}', [HospedajeController::class, 'destroy'])->name('hospedajes.destroy');
 
-    // Rutas para la agenda
+    Route::get('/agenda/{agenda}/comentarios/{comentario}', [ComentarioController::class, 'show'])->name('agenda.comentarios.show');
+    Route::get('/agenda/{agenda}/comentarios/{comentario}/edit', [ComentarioController::class, 'edit'])->name('agenda.comentarios.edit');
+    Route::put('/agenda/{agenda}/comentarios/{comentario}', [ComentarioController::class, 'update'])->name('agenda.comentarios.update');
+    Route::get('/agenda/{agenda}/comentarios/{comentario}/delete', [ComentarioController::class, 'deleteConfirmation'])->name('agenda.comentarios.confirm-delete');
+    Route::delete('/agenda/{agenda}/comentarios/{comentario}', [ComentarioController::class, 'destroy'])->name('agenda.comentarios.destroy');
+
     Route::get('/agenda', [AgendaController::class, 'index'])->name('agenda.index');
-Route::get('/agenda/create', [AgendaController::class, 'create'])->name('agenda.create');
-Route::post('/agenda', [AgendaController::class, 'store'])->name('agenda.store');
-Route::get('/agenda/{agenda}', [AgendaController::class, 'show'])->name('agenda.show');
-Route::get('/agenda/{agenda}/edit', [AgendaController::class, 'edit'])->name('agenda.edit');
-Route::put('/agenda/{agenda}', [AgendaController::class, 'update'])->name('agenda.update');
-Route::delete('/agenda/{agenda}', [AgendaController::class, 'destroy'])->name('agenda.destroy');
+    Route::get('/agenda/create', [AgendaController::class, 'create'])->name('agenda.create');
+    Route::post('/agenda', [AgendaController::class, 'store'])->name('agenda.store');
+    Route::get('/agenda/{agenda}', [AgendaController::class, 'show'])->name('agenda.show');
+    Route::get('/agenda/{agenda}/edit', [AgendaController::class, 'edit'])->name('agenda.edit');
+    Route::put('/agenda/{agenda}', [AgendaController::class, 'update'])->name('agenda.update');
+    Route::delete('/agenda/{agenda}', [AgendaController::class, 'destroy'])->name('agenda.destroy');
 
-
-  
-    
-
-    // Rutas para los comentarios
-    Route::post('/comentarios/{hospedaje}', [ComentarioController::class, 'store'])->name('comentarios.store');
+    Route::post('/agenda/{agenda}/comentarios', [ComentarioController::class, 'storeAgenda'])->name('agenda.comentarios.store');
 });
-
-
-
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-/*
-Here i will define the routes for the different functions
-
-*/
-
-
-/*
-this already came done
-
-*/
-
 
 Route::get('/', function () {
     return view('welcome');
