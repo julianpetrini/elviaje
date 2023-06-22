@@ -14,9 +14,9 @@ class CreateAgendaTable extends Migration
             $table->string('categoria');
             $table->date('fecha');
             $table->time('hora_inicio');
-            $table->time('hora_fin');
+            $table->time('hora_fin')->nullable();
             $table->string('imagen')->nullable();
-            $table->text('descripcion');
+            $table->text('descripcion')->nullable();
             $table->timestamps();
         });
     }

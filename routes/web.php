@@ -8,6 +8,13 @@ use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\ComentarioController;
 
 
+
+
+
+
+
+
+
 // Rutas protegidas (requieren autenticación)
 Route::middleware(['auth'])->group(function () {
     // Rutas para hospedajes
@@ -25,6 +32,7 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/agenda/{agenda}/comentarios/{comentario}', [ComentarioController::class, 'update'])->name('agenda.comentarios.update');
     Route::get('/agenda/{agenda}/comentarios/{comentario}/delete', [ComentarioController::class, 'deleteConfirmation'])->name('agenda.comentarios.confirm-delete');
     Route::delete('/agenda/{agenda}/comentarios/{comentario}', [ComentarioController::class, 'destroy'])->name('agenda.comentarios.destroy');
+    Route::get('/agenda/{agenda}/comentarios/filter', [ComentarioController::class, 'filter'])->name('agenda.comentarios.filter');
 
     // Rutas para la agenda
     Route::get('/agenda/create', [AgendaController::class, 'create'])->name('agenda.create');
@@ -54,6 +62,8 @@ Route::get('/agenda', [AgendaController::class, 'index'])->name('agenda.index');
 Route::get('/agenda/{agenda}', [AgendaController::class, 'show'])->name('agenda.show');
 Route::get('/agenda/{agenda}/comentarios/{comentario}', [ComentarioController::class, 'showComment'])->name('agenda.comentarios.showComment');
 Route::get('/agenda/{agenda}/comentarios/{comentario}', [ComentarioController::class, 'show'])->name('agenda.comentarios.show');
+
+
 
 
 

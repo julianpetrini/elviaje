@@ -19,17 +19,7 @@
 
 <a href="{{ route('agenda.index') }}">Volver al listado de actividades de agenda</a>
 
-<!-- Mostrar comentarios de la agenda -->
-<h2>Filtrar comentarios</h2>
-<form action="{{ route('agenda.comentarios.filter', ['agenda' => $agenda->id]) }}" method="GET">
-    <div>
-        <input type="hidden" name="agenda" value="{{ $agenda->id }}">
-        <button type="submit" name="categoria" value="Beach">Filtrar Beach</button>
-        <button type="submit" name="categoria" value="Foody">Filtrar Foody</button>
-        <button type="submit" name="categoria" value="Visiting">Filtrar Visiting</button>
-        <button type="submit" name="categoria" value="Shopping">Filtrar Shopping</button>
-    </div>
-</form>
+
 
 
 

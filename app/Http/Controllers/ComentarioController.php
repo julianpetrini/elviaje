@@ -132,5 +132,19 @@ public function storeAgenda(Request $request, Agenda $agenda)
         // Retorna la vista de comentarios con los datos necesarios
         return view('hospedajes.comentarios', compact('hospedaje', 'comentarios'));
     }
+
+    public function filter(Request $request, $agendaId)
+        {               
+            $categoria = $request->input('categoria');
+            
+            // Realizar la lógica de filtrado según la categoría
+            
+            // Obtener los comentarios filtrados
+            
+            // Retornar la vista con los comentarios filtrados
+        }
+
+
+
 }
 

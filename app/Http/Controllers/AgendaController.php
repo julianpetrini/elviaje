@@ -7,12 +7,31 @@ use Illuminate\Http\Request;
 
 class AgendaController extends Controller
 {
-    public function index()
+
+    public function index(Request $request)
     {
-        $actividades = Agenda::all();
+        $categoria = $request->input('categoria');
+    
+        $actividades = Agenda::query();
+    
+        if ($categoria) {
+            $actividades->where('categoria', $categoria);
+        }
+    
+        $actividades->orderBy('fecha', 'asc')
+                   ->orderBy('hora_inicio', 'asc');
+    
+        $actividades = $actividades->get();
+    
         return view('agenda.index', compact('actividades'));
     }
+    
 
+
+
+
+
+   
     public function create()
     {
         return view('agenda.create');
