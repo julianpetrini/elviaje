@@ -5,12 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Agenda;
+use App\Http\Controllers\WeatherController;
+
 
 class AgendaController extends Controller
 {
 
     public function index(Request $request)
     {
+        $weatherController = new WeatherController();
+        $weatherData = $weatherController->getWeather();
+
+
+
         $categoria = $request->input('categoria');
     
         $actividades = Agenda::query();
@@ -24,7 +31,9 @@ class AgendaController extends Controller
     
         $actividades = $actividades->get();
     
-        return view('agenda.index', compact('actividades'));
+        
+        return view('agenda.index', compact('actividades', 'weatherData'));
+
     }
     
 

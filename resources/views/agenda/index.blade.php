@@ -1,3 +1,10 @@
+<h2>{{ $weatherData['temperature'] }} °C</h2>
+
+<img src="{{ $weatherData['weatherIcon'] }}" alt="Weather Icon">
+
+
+
+
 <h1 class="text-3xl font-bold mb-4">Listado de Actividades de Agenda</h1>
 
 <!-- Carrusel con la actividad más próxima -->
