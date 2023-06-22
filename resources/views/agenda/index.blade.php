@@ -1,26 +1,50 @@
-<h1>Listado de Actividades de Agenda</h1>
+<h1 class="text-3xl font-bold mb-4">Listado de Actividades de Agenda</h1>
 
+<!-- Carrusel con la actividad más próxima -->
+@if ($actividades->isNotEmpty())
+    @php
+        $actividadProxima = $actividades->first();
+    @endphp
+
+    <div id="carousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            @foreach ($actividades as $actividad)
+                <div class="carousel-item{{ $actividad->id == $actividadProxima->id ? ' active' : '' }}">
+                    <img src="{{ $actividad->imagen }}" alt="{{ $actividad->titulo }}" class="carousel-image">
+                    <div class="carousel-caption">
+                        <h3 class="text-xl font-semibold">{{ $actividad->titulo }}</h3>
+                        <p>{{ $actividad->descripcion }}</p>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+@endif
+
+<!-- Resto del contenido -->
 <form action="{{ route('agenda.index') }}" method="GET">
-    <div>
-        <label for="categoria">Filtrar por categoría:</label>
-        <select name="categoria" id="categoria">
+    <div class="mb-4">
+        <label for="categoria" class="mr-2">Filtrar por categoría:</label>
+        <select name="categoria" id="categoria" class="border border-gray-300 rounded-md p-1">
             <option value="">Todas</option>
             <option value="Beach" {{ request('categoria') == 'Beach' ? 'selected' : '' }}>Beach</option>
             <option value="Foody" {{ request('categoria') == 'Foody' ? 'selected' : '' }}>Foody</option>
             <option value="Visiting" {{ request('categoria') == 'Visiting' ? 'selected' : '' }}>Visiting</option>
             <option value="Shopping" {{ request('categoria') == 'Shopping' ? 'selected' : '' }}>Shopping</option>
         </select>
-        <button type="submit">Filtrar</button>
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md ml-2">Filtrar</button>
     </div>
 </form>
 
-@foreach ($actividades as $actividad)
-    <p>{{ $actividad->titulo }}</p>
-    <p>{{ $actividad->descripcion }}</p>
-    <p>Fecha: {{ $actividad->fecha }}</p>
-    <p>Hora de inicio: {{ $actividad->hora_inicio }}</p>
-    <a href="{{ route('agenda.show', ['agenda' => $actividad->id]) }}">Ver detalles</a>
-    <hr>
+@foreach ($actividades->groupBy('fecha')->sortKeys() as $fecha => $actividadesDia)
+    @php
+        $fechaTitulo = Carbon\Carbon::parse($fecha)->locale('es')->isoFormat('dddd DD.MM');
+    @endphp
+    <h2 class="text-2xl font-semibold mb-2">{{ $fechaTitulo }}</h2>
+    @foreach ($actividadesDia->sortBy('hora_inicio') as $actividad)
+        <p class="mb-1"><strong>Hora de inicio:</strong> {{ $actividad->hora_inicio }}</p>
+        <p class="mb-4"><strong>Título:</strong> {{ $actividad->titulo }}</p>
+    @endforeach
 @endforeach
 
-<a href="{{ route('agenda.create') }}">Crear nueva actividad de agenda</a>
+<a href="{{ route('agenda.create') }}" class="bg-green-500 text-white px-4 py-2 rounded-md">Crear nueva actividad de agenda</a>
