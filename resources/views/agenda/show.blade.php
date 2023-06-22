@@ -7,7 +7,7 @@
 <p>Descripción: {{ $agenda->descripcion }}</p>
 
 <!-- Mostrar más detalles de la actividad -->
-
+@auth
 <a href="{{ route('agenda.edit', ['agenda' => $agenda->id]) }}">Editar</a>
 
 <form action="{{ route('agenda.destroy', ['agenda' => $agenda->id]) }}" method="post">
@@ -15,6 +15,7 @@
     @method('delete')
     <button type="submit">Eliminar</button>
 </form>
+@endauth
 
 <a href="{{ route('agenda.index') }}">Volver al listado de actividades de agenda</a>
 
@@ -41,6 +42,7 @@
 
 
 
+@auth
 
 
 <!-- Formulario para agregar un nuevo comentario -->
@@ -59,3 +61,4 @@
         <button type="submit">Agregar Comentario</button>
     </div>
 </form>
+@endauth

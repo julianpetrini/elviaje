@@ -8,7 +8,8 @@
     <hr>
 @endforeach
 
+@auth
 <a href="{{ route('agenda.create') }}">Crear nueva actividad de agenda</a>
-
+@endauth
 
 
