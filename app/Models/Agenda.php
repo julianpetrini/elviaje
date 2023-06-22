@@ -11,10 +11,9 @@ class Agenda extends Model
 
     protected $table = 'agenda';
 
-    public function comentarios()
+    public function comments()
     {
-        return $this->hasMany(Comment::class, 'agenda_id');
-
+        return $this->hasMany(Comment::class);
     }
 
         // Resto de las definiciones del modelo

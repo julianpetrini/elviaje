@@ -1,5 +1,8 @@
 <h1>Detalles de la Actividad de Agenda</h1>
 
+
+
+
 <p>Título: {{ $agenda->titulo }}</p>
 <p>Descripción: {{ $agenda->descripcion }}</p>
 
@@ -16,24 +19,33 @@
 <a href="{{ route('agenda.index') }}">Volver al listado de actividades de agenda</a>
 
 <!-- Mostrar comentarios de la agenda -->
+
 <h2>Comentarios</h2>
-@if ($agenda->comments)
+
+@if ($agenda->comments->count() > 0)
+
     @foreach ($agenda->comments as $comment)
+
         <div id="comment_{{ $comment->id }}" class="{{ $comment->id == request()->input('comment') ? 'highlighted' : '' }}">
-            <p>{{ $comment->content }}</p>
-            <a href="{{ route('agenda.comentarios.edit', ['agenda' => $agenda->id, 'comentario' => $comment->id]) }}">Editar</a>
-            <a href="{{ route('agenda.comentarios.confirm-delete', ['agenda' => $agenda->id, 'comentario' => $comment->id]) }}">Eliminar</a>
-            <a href="{{ route('agenda.comentarios.show', ['agenda' => $agenda->id, 'comentario' => $comment->id]) }}">Detalles</a>
+
+            <p><a href="{{ route('agenda.comentarios.show', ['agenda' => $agenda->id, 'comentario' => $comment->id]) }}">{{ $comment->content }}</a></p>
+
         </div>
+
     @endforeach
+
 @else
+
     <p>Aún no hay comentarios disponibles.</p>
 @endif
 
 
+
+
+
 <!-- Formulario para agregar un nuevo comentario -->
 <h2>Agregar Comentario</h2>
-<form action="{{ route('agenda.comentarios.store', ['agenda' => $agenda->id]) }}" method="post" enctype="multipart/form-data">
+<form action="{{ route('agenda.comentarios.storeAgenda', ['agenda' => $agenda->id]) }}" method="post" enctype="multipart/form-data">
     @csrf
     <div>
         <label for="content">Contenido del comentario:</label>
