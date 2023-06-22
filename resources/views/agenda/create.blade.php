@@ -9,9 +9,15 @@
             <input type="text" name="titulo" id="titulo" required>
         </div>
 
+        
         <div>
             <label for="categoria">Categoría:</label>
-            <input type="text" name="categoria" id="categoria" required>
+            <select name="categoria" id="categoria" required>
+                <option value="Beach">Beach</option>
+                <option value="Foody">Foody</option>
+                <option value="Visiting">Visiting</option>
+                <option value="Shopping">Shopping</option>
+            </select>
         </div>
 
         <div>
@@ -26,17 +32,17 @@
 
         <div>
             <label for="hora_fin">Hora de fin:</label>
-            <input type="time" name="hora_fin" id="hora_fin" required>
+            <input type="time" name="hora_fin" id="hora_fin" >
         </div>
 
         <div>
             <label for="imagen">Imagen:</label>
-            <input type="file" name="imagen" id="imagen" accept="image/*" required>
+            <input type="file" name="imagen" id="imagen" accept="image/*" >
         </div>
 
         <div>
             <label for="descripcion">Descripción:</label>
-            <textarea name="descripcion" id="descripcion" rows="4" required></textarea>
+            <textarea name="descripcion" id="descripcion" rows="4" ></textarea>
         </div>
 
         <div>

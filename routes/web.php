@@ -7,15 +7,6 @@ use App\Http\Controllers\HospedajeController;
 use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\ComentarioController;
 
-// Rutas públicas (accesibles para usuarios no registrados)
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
-
-Route::get('/agenda', [AgendaController::class, 'index'])->name('agenda.index');
-Route::get('/agenda/{agenda}', [AgendaController::class, 'show'])->name('agenda.show');
-Route::get('/agenda/{agenda}/comentarios/{comentario}', [ComentarioController::class, 'showComment'])->name('agenda.comentarios.showComment');
-Route::get('/agenda/{agenda}/comentarios/{comentario}', [ComentarioController::class, 'show'])->name('agenda.comentarios.show');
 
 // Rutas protegidas (requieren autenticación)
 Route::middleware(['auth'])->group(function () {
@@ -41,7 +32,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/agenda/{agenda}/edit', [AgendaController::class, 'edit'])->name('agenda.edit');
     Route::put('/agenda/{agenda}', [AgendaController::class, 'update'])->name('agenda.update');
     Route::delete('/agenda/{agenda}', [AgendaController::class, 'destroy'])->name('agenda.destroy');
-
+    
     // Rutas para el perfil de usuario
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -52,6 +43,19 @@ Route::middleware(['auth'])->group(function () {
         return view('dashboard');
     })->middleware(['verified'])->name('dashboard');
 });
+
+
+// Rutas públicas (accesibles para usuarios no registrados)
+Route::get('/', function () {
+    return view('welcome');
+})->name('welcome');
+
+Route::get('/agenda', [AgendaController::class, 'index'])->name('agenda.index');
+Route::get('/agenda/{agenda}', [AgendaController::class, 'show'])->name('agenda.show');
+Route::get('/agenda/{agenda}/comentarios/{comentario}', [ComentarioController::class, 'showComment'])->name('agenda.comentarios.showComment');
+Route::get('/agenda/{agenda}/comentarios/{comentario}', [ComentarioController::class, 'show'])->name('agenda.comentarios.show');
+
+
 
 // Rutas de autenticación
 require __DIR__.'/auth.php';
