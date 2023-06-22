@@ -11,6 +11,8 @@ use App\Http\Controllers\WeatherController;
 class AgendaController extends Controller
 {
 
+    
+
     public function index(Request $request)
     {
         $weatherController = new WeatherController();

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use GuzzleHttp\Client;
+use Carbon\Carbon;
 
 class WeatherController extends Controller
 {
@@ -19,13 +20,19 @@ class WeatherController extends Controller
         $temperature = $temperature - 273.15;
         $temperature = round($temperature);
 
+        $currentDate = Carbon::now()->format('d.m.y');
+        $currentDay = Carbon::now()->format('l');
 
         $weatherIcon = $data['weather'][0]['icon'];
         $weatherIcon = "https://openweathermap.org/img/w/" . $weatherIcon . ".png";
 
+        $weatherData = [
+            'temperature' => $temperature,
+            'weatherIcon' => $weatherIcon,
+            'currentDate' => $currentDate,
+            'currentDay' => $currentDay,
+        ];
 
-        // Aquí puedes pasar los datos a tu vista y mostrarlos como desees
-        return ['temperature' => $temperature, 'weatherIcon' => $weatherIcon];
-
+        return $weatherData;
     }
 }

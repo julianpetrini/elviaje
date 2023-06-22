@@ -2,7 +2,10 @@
 
 <img src="{{ $weatherData['weatherIcon'] }}" alt="Weather Icon">
 
-
+<div class="weather-date">
+    <p>{{ $weatherData['currentDay'] }}</p>
+    <p>{{ $weatherData['currentDate'] }}</p>
+</div>
 
 
 <h1 class="text-3xl font-bold mb-4">Listado de Actividades de Agenda</h1>
