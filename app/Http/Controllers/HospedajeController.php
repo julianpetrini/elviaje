@@ -9,12 +9,11 @@ class HospedajeController extends Controller
 {
     public function index()
     {
-        // Obtener todos los hospedajes desde la base de datos
-        $hospedajes = Hospedaje::all();
-
-        // Retornar la vista index.blade.php con los hospedajes
+        $hospedajes = Hospedaje::orderBy('check_in')->get();
+    
         return view('hospedajes.index', compact('hospedajes'));
     }
+    
 
     public function create()
     {
@@ -24,7 +23,6 @@ class HospedajeController extends Controller
 
     public function store(Request $request)
     {
-        // Validar los datos enviados por el formulario
         $request->validate([
             'nombre' => 'required',
             'ubicacion' => 'required',
@@ -34,11 +32,9 @@ class HospedajeController extends Controller
             'descripcion' => 'required',
             'foto' => 'required|image',
         ]);
-
-        // Subir la imagen del hospedaje
+    
         $fotoPath = $request->file('foto')->store('public/hospedajes');
-
-        // Crear un nuevo hospedaje en la base de datos
+    
         $hospedaje = new Hospedaje();
         $hospedaje->nombre = $request->input('nombre');
         $hospedaje->ubicacion = $request->input('ubicacion');
@@ -48,10 +44,18 @@ class HospedajeController extends Controller
         $hospedaje->descripcion = $request->input('descripcion');
         $hospedaje->foto = $fotoPath;
         $hospedaje->save();
-
-        // Redireccionar al listado de hospedajes
+    
         return redirect()->route('hospedajes.index')->with('success', 'Hospedaje creado exitosamente.');
     }
+
+    public function upcoming()
+    {
+        $upcomingHospedajes = Hospedaje::where('check_in', '>', now())->orderBy('check_in')->get();
+
+        return view('hospedajes.upcoming', compact('upcomingHospedajes'));
+    }
+
+
 
     // Otros métodos como show(), edit(), update(), destroy() aquí...
 }

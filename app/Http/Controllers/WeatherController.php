@@ -7,7 +7,7 @@ use Carbon\Carbon;
 
 class WeatherController extends Controller
 {
-    public function getWeather()
+    public function getWeather() 
     {
         $client = new Client();
         $apiKey = 'f7d0eba892c975a2c99969412cecaad4'; // Reemplaza con tu clave API de OpenWeatherMap

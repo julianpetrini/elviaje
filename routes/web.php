@@ -18,13 +18,18 @@ use App\Http\Controllers\ComentarioController;
 // Rutas protegidas (requieren autenticación)
 Route::middleware(['auth'])->group(function () {
     // Rutas para hospedajes
-    Route::get('/hospedajes', [HospedajeController::class, 'index'])->name('hospedajes.index');
-    Route::get('/hospedajes/create', [HospedajeController::class, 'create'])->name('hospedajes.create');
-    Route::post('/hospedajes', [HospedajeController::class, 'store'])->name('hospedajes.store');
-    Route::get('/hospedajes/{hospedaje}', [HospedajeController::class, 'show'])->name('hospedajes.show');
-    Route::get('/hospedajes/{hospedaje}/edit', [HospedajeController::class, 'edit'])->name('hospedajes.edit');
-    Route::put('/hospedajes/{hospedaje}', [HospedajeController::class, 'update'])->name('hospedajes.update');
-    Route::delete('/hospedajes/{hospedaje}', [HospedajeController::class, 'destroy'])->name('hospedajes.destroy');
+    
+    //Route::get('/hospedajes/create', [HospedajeController::class, 'create'])->name('hospedajes.create');
+    //Route::post('/hospedajes', [HospedajeController::class, 'store'])->name('hospedajes.store');
+   
+    //Route::get('/hospedajes/{hospedaje}/edit', [HospedajeController::class, 'edit'])->name('hospedajes.edit');
+    //Route::put('/hospedajes/{hospedaje}', [HospedajeController::class, 'update'])->name('hospedajes.update');
+    //Route::delete('/hospedajes/{hospedaje}', [HospedajeController::class, 'destroy'])->name('hospedajes.destroy');
+
+    
+
+
+
 
     // Rutas para comentarios
     Route::post('/agenda/{agenda}/comentarios', [ComentarioController::class, 'storeAgenda'])->name('agenda.comentarios.storeAgenda');
@@ -67,8 +72,8 @@ Route::get('/agenda', [AgendaController::class, 'index'])->name('agenda.index');
 Route::get('/agenda/{agenda}', [AgendaController::class, 'show'])->name('agenda.show');
 Route::get('/agenda/{agenda}/comentarios/{comentario}', [ComentarioController::class, 'show'])->name('agenda.comentarios.show');
 
-
-
+Route::get('/hospedajes', [HospedajeController::class, 'index'])->name('hospedajes.index');
+Route::get('/hospedajes/{hospedaje}', [HospedajeController::class, 'show'])->name('hospedajes.show');
 
 
 // Rutas de autenticación
