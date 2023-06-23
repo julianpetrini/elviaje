@@ -24,9 +24,12 @@
 
 @foreach ($agenda->comments as $comment)
     <div class="image-container">
-        <img src="{{ Storage::url($comment->image) }}" alt="Comentario Imagen">
+        @if ($comment->image)
+            <img src="{{ Storage::url($comment->image) }}" alt="Comentario Imagen">
+        @endif
     </div>
 @endforeach
+
 
 
 

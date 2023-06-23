@@ -7,25 +7,21 @@ use App\Models\Hospedaje;
 use App\Models\Comment;
 use Illuminate\Http\Request;
 
+
 class ComentarioController extends Controller
 {
-    public function showComment($agendaId, $comentarioId)
+  
+    
+    
+
+
+
+    public function show($agendaId, $comentarioId)
     {
-        $comentario = Comment::where('agenda_id', $agendaId)
-            ->where('id', $comentarioId)
-            ->firstOrFail();
+        $comentario = Comment::where('agenda_id', $agendaId)->findOrFail($comentarioId);
         return view('agenda.comentarios.show', compact('comentario'));
     }
     
-    
-
-
-
-public function show($agendaId, $comentarioId)
-{
-    $comentario = Comment::where('agenda_id', $agendaId)->findOrFail($comentarioId);
-    return view('agenda.comentarios.show', compact('comentario'));
-}
 
 
 
@@ -34,33 +30,33 @@ public function show($agendaId, $comentarioId)
 
 
 
-public function storeAgenda(Request $request, Agenda $agenda)
-{
-    // Valida los datos del formulario de comentarios
-    $request->validate([
-        'content' => 'required|string',
-        'image' => 'nullable|image',
-    ]);
+    public function storeAgenda(Request $request, Agenda $agenda)
+    {
+        // Valida los datos del formulario de comentarios
+        $request->validate([
+            'content' => 'required|string',
+            'image' => 'nullable|image',
+        ]);
 
-    // Crea un nuevo comentario
-    $comment = new Comment();
-    $comment->user_id = auth()->user()->id;
-    $comment->agenda_id = $agenda->id;
-    $comment->content = $request->content;
+        // Crea un nuevo comentario
+        $comment = new Comment();
+        $comment->user_id = auth()->user()->id;
+        $comment->agenda_id = $agenda->id;
+        $comment->content = $request->content;
 
-    // Sube la imagen (si se proporciona)
-    if ($request->hasFile('image')) {
-        $image = $request->file('image');
-        $path = $image->store('comments', 'public');
-        $comment->image = $path;
+        // Sube la imagen (si se proporciona)
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $path = $image->store('comments', 'public');
+            $comment->image = $path;
+        }
+
+        // Guarda el comentario en la base de datos
+        $comment->save();
+
+        // Redirecciona a la vista de detalles de la agenda
+        return redirect()->route('agenda.show', ['agenda' => $agenda->id]);
     }
-
-    // Guarda el comentario en la base de datos
-    $comment->save();
-
-    // Redirecciona a la vista de detalles de la agenda
-    return redirect()->route('agenda.show', ['agenda' => $agenda->id]);
-}
 
 
 
@@ -84,17 +80,24 @@ public function storeAgenda(Request $request, Agenda $agenda)
     }
 
 
+   // public function deleteConfirmation($agendaId, $comentarioId)
+    //{
+      //  $comentario = Comment::where('agenda_id', $agendaId)->findOrFail($comentarioId);
+        //return view('agenda.comentarios.delete_confirmation', compact('comentario'));
+   // }
 
 
 
 
-    public function destroy(Comment $comentario)
-    {
-        $agendaId = $comentario->agenda_id;
-        $comentario->delete();
-
-        return redirect()->route('agenda.show', ['agenda' => $agendaId]);
-    }
+   public function destroy($agendaId, $comentarioId)
+   {
+       $comentario = Comment::where('agenda_id', $agendaId)->findOrFail($comentarioId);
+       $comentario->delete();
+   
+       return back();
+   }
+   
+    
 
    // public function show(Comment $comentario)
     //{

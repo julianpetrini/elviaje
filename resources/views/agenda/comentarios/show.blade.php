@@ -1,4 +1,4 @@
-@section('content')
+
     <div class="container">
         <h2>Detalles del Comentario</h2>
         <div class="card">
@@ -10,13 +10,19 @@
                 <p>Fecha: {{ $comentario->agenda->fecha }}</p>
                 <p>Descripción: {{ $comentario->agenda->descripcion }}</p>
                 <p>Comentario: {{ $comentario->content }}</p>
+                @if ($comentario->image)
+                <img src="{{ asset('storage/' . $comentario->image) }}" alt="Imagen del Comentario">
+                @endif
             </div>
             <div class="card-footer">
-                <a href="{{ route('agenda.comentarios.edit', ['agenda' => $comentario->agenda->id, 'comentario' => $comentario->id]) }}" class="btn btn-primary">Editar</a>
-                <a href="{{ route('agenda.comentarios.confirm-delete', ['agenda' => $comentario->agenda->id, 'comentario' => $comentario->id]) }}" class="btn btn-danger">Eliminar</a>
+            
+
                 
-                <a href="{{ route('agenda.comentarios.show', ['agenda' => $comentario->agenda->id, 'comentario' => $comentario->id]) }}" class="btn btn-secondary">Volver</a>
+                
+                <a href="{{ route('agenda.show', ['agenda' => $comentario->agenda->id, 'comentario' => $comentario->id]) }}" class="btn btn-secondary">Volver</a>
             </div>
         </div>
     </div>
-@endsection
+
+
+

@@ -28,10 +28,15 @@ Route::middleware(['auth'])->group(function () {
 
     // Rutas para comentarios
     Route::post('/agenda/{agenda}/comentarios', [ComentarioController::class, 'storeAgenda'])->name('agenda.comentarios.storeAgenda');
-    Route::get('/agenda/{agenda}/comentarios/{comentario}/edit', [ComentarioController::class, 'edit'])->name('agenda.comentarios.edit');
+    //Route::get('/agenda/{agenda}/comentarios/{comentario}/edit', [ComentarioController::class, 'edit'])->name('agenda.comentarios.edit');
+    //Route::get('/agenda/{agenda}/comentarios/{comentario}/edit', [ComentarioController::class, 'edit'])->name('agenda.comentarios.edit');
+    Route::get('/agenda/{agendaId}/comentarios/{comentarioId}/edit', [ComentarioController::class, 'edit'])->name('agenda.comentarios.edit');
+    Route::delete('/agenda/{agendaId}/comentarios/{comentarioId}', 'ComentarioController@destroy')->name('agenda.comentarios.destroy');
+
+
     Route::put('/agenda/{agenda}/comentarios/{comentario}', [ComentarioController::class, 'update'])->name('agenda.comentarios.update');
     Route::get('/agenda/{agenda}/comentarios/{comentario}/delete', [ComentarioController::class, 'deleteConfirmation'])->name('agenda.comentarios.confirm-delete');
-    Route::delete('/agenda/{agenda}/comentarios/{comentario}', [ComentarioController::class, 'destroy'])->name('agenda.comentarios.destroy');
+    //Route::delete('/agenda/{agenda}/comentarios/{comentario}', [ComentarioController::class, 'destroy'])->name('agenda.comentarios.destroy');
     Route::get('/agenda/{agenda}/comentarios/filter', [ComentarioController::class, 'filter'])->name('agenda.comentarios.filter');
 
     // Rutas para la agenda
@@ -60,7 +65,6 @@ Route::get('/', function () {
 
 Route::get('/agenda', [AgendaController::class, 'index'])->name('agenda.index');
 Route::get('/agenda/{agenda}', [AgendaController::class, 'show'])->name('agenda.show');
-Route::get('/agenda/{agenda}/comentarios/{comentario}', [ComentarioController::class, 'showComment'])->name('agenda.comentarios.showComment');
 Route::get('/agenda/{agenda}/comentarios/{comentario}', [ComentarioController::class, 'show'])->name('agenda.comentarios.show');
 
 
