@@ -10,7 +10,7 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     {{ __("You're logged in!") }}
-                    <h2>soon you will be able to track your activity</h2>
+        <h2>soon you will be able to track your activity</h2>
                     <div class="mt-4">
                         <a href="{{ route('welcome') }}" class="btn btn-primary">Go to Welcome</a><br>
                         <a href="{{ route('agenda.index') }}" class="btn btn-primary">Go to Agenda</a>
@@ -20,3 +20,8 @@
         </div>
     </div>
 </x-app-layout>
+
+
+/* Fondo */
+
+

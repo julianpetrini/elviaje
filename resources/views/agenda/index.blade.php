@@ -2,17 +2,20 @@
 
 
 @section('content')
-    <h2>{{ $weatherData['temperature'] }} °C</h2>
 
-    <img src="{{ $weatherData['weatherIcon'] }}" alt="Weather Icon">
-
-    <div class="weather-date">
-        <p>{{ $weatherData['currentDay'] }}</p>
-        <p>{{ $weatherData['currentDate'] }}</p>
+<div class="weather-container">
+    <div class="weather-info">
+        <h2>{{ $weatherData['currentDay'] }}</h2>
+        <img src="{{ $weatherData['weatherIcon'] }}" alt="Weather Icon">
+        <p class="temperature">{{ $weatherData['temperature'] }} °C</p>
+        <div class="weather-date">
+            <p>{{ $weatherData['currentDate'] }}</p>
+        </div>
     </div>
+</div>
 
 
-    <h1 class="text-3xl font-bold mb-4">Listado de Actividades de Agenda</h1>
+    <h2 class="text-3xl font-bold mb-4">Lovsi in Palma</h2>
 
     <!-- Carrusel con la actividad más próxima -->
     @if ($actividades->isNotEmpty())
@@ -33,6 +36,23 @@
     </div>
     </div>
     @endif
+
+    <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
 
     <!-- Resto del contenido -->
     <form action="{{ route('agenda.index') }}" method="GET">
@@ -64,7 +84,6 @@
             @endforeach
         </a>
     @endforeach
-
 
     <a href="{{ route('agenda.create') }}" class="bg-green-500 text-white px-4 py-2 rounded-md">Crear nueva actividad de
         agenda</a>
