@@ -144,7 +144,10 @@ public function storeAgenda(Request $request, Agenda $agenda)
             // Retornar la vista con los comentarios filtrados
         }
 
-
+        public function agenda()
+        {
+            return $this->belongsTo(Agenda::class);
+        }
 
 }
 

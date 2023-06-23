@@ -16,5 +16,8 @@ class Agenda extends Model
         return $this->hasMany(Comment::class);
     }
 
+
+    
+
         // Resto de las definiciones del modelo
 }

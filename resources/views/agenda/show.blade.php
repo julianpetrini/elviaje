@@ -3,8 +3,11 @@
 
 
 
+
 <p>Título: {{ $agenda->titulo }}</p>
 <p>Descripción: {{ $agenda->descripcion }}</p>
+
+
 
 <!-- Mostrar más detalles de la actividad -->
 @auth
@@ -19,7 +22,11 @@
 
 <a href="{{ route('agenda.index') }}">Volver al listado de actividades de agenda</a>
 
-
+@foreach ($agenda->comments as $comment)
+    <div class="image-container">
+        <img src="{{ Storage::url($comment->image) }}" alt="Comentario Imagen">
+    </div>
+@endforeach
 
 
 

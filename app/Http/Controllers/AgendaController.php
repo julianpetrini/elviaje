@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Agenda;
 use App\Http\Controllers\WeatherController;
+use App\Models\Comentario;
+
 
 
 class AgendaController extends Controller
@@ -77,9 +79,9 @@ class AgendaController extends Controller
     public function show($id)
     {
         $agenda = Agenda::findOrFail($id);
-        $agenda->load('comments'); // Cargar los comentarios relacionados con la agenda
+        $comentarios = $agenda->comentarios;
     
-        return view('agenda.show', compact('agenda'));
+        return view('agenda.show', compact('agenda', 'comentarios'));
     }
     
     public function showComment($agendaId, $comentarioId)
@@ -121,5 +123,17 @@ class AgendaController extends Controller
         $agenda->delete();
         return redirect()->route('agenda.index');
     }
+
+    public function comentarios()
+    {
+        return $this->hasMany(Comentario::class);
+    }
+    
+
+
+    
+
+
+
 }
 
