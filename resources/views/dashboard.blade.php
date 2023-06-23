@@ -10,16 +10,9 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     {{ __("You're logged in!") }}
-
-                    <!-- Mostrar la actividad del usuario -->
-                    <div>
-                        <h3>Activity:</h3>
-                        <!-- Aquí puedes mostrar la lista de eventos o comentarios realizados por el usuario -->
-                    </div>
-
-                    <!-- Botones para ir al welcome y a la página de agenda -->
+                    <h2>soon you will be able to track your activity</h2>
                     <div class="mt-4">
-                        <a href="{{ route('welcome') }}" class="btn btn-primary">Go to Welcome</a>
+                        <a href="{{ route('welcome') }}" class="btn btn-primary">Go to Welcome</a><br>
                         <a href="{{ route('agenda.index') }}" class="btn btn-primary">Go to Agenda</a>
                     </div>
                 </div>

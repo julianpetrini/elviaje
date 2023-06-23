@@ -78,3 +78,7 @@ Route::get('/hospedajes/{hospedaje}', [HospedajeController::class, 'show'])->nam
 
 // Rutas de autenticación
 require __DIR__.'/auth.php';
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
