@@ -14,11 +14,12 @@
                 <p>Comentario: {{ $comentario->content }}</p>
             </div>
             <div class="card-footer">
-                <a href="{{ route('agenda.comentarios.edit', ['agenda' => $comentario->agenda->id, 'comentario' => $comentario->id]) }}" class="btn btn-primary">Editar</a>
-                <a href="{{ route('agenda.comentarios.confirm-delete', ['agenda' => $comentario->agenda->id, 'comentario' => $comentario->id]) }}" class="btn btn-danger">Eliminar</a>
+                <a href="{{ route('agenda.comentarios.edit', ['agenda' => $comentario->agenda->id, 'comentario' => $comentario->id]) }}"
+                    class="btn btn-primary">Editar</a>
+                <a href="{{ route('agenda.comentarios.confirm-delete', ['agenda' => $comentario->agenda->id, 'comentario' => $comentario->id]) }}"
+                    class="btn btn-danger">Eliminar</a>
                 <a href="{{ route('agenda.show', ['id' => $comentario->agenda->id]) }}" class="btn btn-secondary">Volver</a>
             </div>
         </div>
     </div>
 @endsection
-
