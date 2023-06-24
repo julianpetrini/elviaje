@@ -1,46 +1,53 @@
 @extends('layouts.fondo')
 
 @section('content')
-    <h1>Cargar Hospedaje</h1>
+<div class="container">
+    <h1 class="text-center">New place to stay</h1>
+
+    
 
     <form action="{{ route('hospedajes.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
-        <div>
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
+        <div class="form-group">
+            <label for="nombre">Name:</label>
+            <input type="text" id="nombre" name="nombre" class="form-control" required>
         </div>
 
-        <div>
-            <label for="ubicacion">Ubicación:</label>
-            <input type="text" id="ubicacion" name="ubicacion" required>
+        <div class="form-group">
+            <label for="ubicacion">Location:</label>
+            <input type="text" id="ubicacion" name="ubicacion" class="form-control" required>
         </div>
 
-        <div>
+        <div class="form-group">
             <label for="check_in">Check-in:</label>
-            <input type="date" id="check_in" name="check_in" required>
+            <input type="date" id="check_in" name="check_in" class="form-control" required>
         </div>
 
-        <div>
+        <div class="form-group">
             <label for="check_out">Check-out:</label>
-            <input type="date" id="check_out" name="check_out" required>
+            <input type="date" id="check_out" name="check_out" class="form-control" required>
         </div>
 
-        <div>
-            <label for="stars">Estrellas:</label>
-            <input type="number" id="stars" name="stars" required>
+        <div class="form-group">
+            <label for="stars">Stars:</label>
+            <input type="number" id="stars" name="stars" class="form-control" required>
         </div>
 
-        <div>
-            <label for="descripcion">Descripción:</label>
-            <textarea id="descripcion" name="descripcion"></textarea>
+        <div class="form-group">
+            <label for="descripcion">Description:</label>
+            <textarea id="descripcion" name="descripcion" class="form-control"></textarea>
         </div>
 
-        <div>
-            <label for="foto">Foto:</label>
-            <input type="file" id="foto" name="foto">
+        <div class="form-group">
+            <label for="foto">Image:</label>
+            <input type="file" id="foto" name="foto" class="form-control-file">
         </div>
 
-        <button type="submit">Guardar</button>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary mx-2">Save</button>
+            <a href="{{ route('hospedajes.index') }}" class="btn btn-secondary mx-2">Back</a>
+        </div>
     </form>
+</div>
 @endsection

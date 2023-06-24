@@ -1,33 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@400;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 #app {
+    position: relative;
     padding: 1rem;
     width: 100%;
-    height: 100%;
+    height: auto;
     left: 0;
     top: 0;
-    background: linear-gradient(
-        180deg,
-        #9ac5f4 0%,
-        #99dbf5 70.83%,
-        #a7ecee 100%
-    );
+    background: linear-gradient(180deg, #9ac5f4 0%, #99dbf5 70.83%, #a7ecee 100%);
     background-size: cover;
+
 }
 
-body{
-    margin: 0;
+body {
     padding: 0;
+    margin: 0;
+    font-family: 'Blinker', sans-serif;
+    color: white;
 }
+
+h1.text-center {
+    color: white;
+    font-weight:400;
+    font-family: 'Bakersville';
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    background-color: transparent;
+    border-color: #fff;
+    color: #fff;
+}
+
+.form-group {
+    padding-bottom: 20px;
+}
+
+.form-group label {
+    font-family: 'Blinker', serif;
+    color: white;
+}
+
+.form-group input{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+
+
+
+
 
 
 .weather-container {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    
 }
 
 .weather-info {
@@ -38,7 +74,7 @@ body{
 .weather-info h2 {
     font-weight: bold;
     margin-right: 10px;
-    font-family: "Blinker", sans-serif;
+    font-family: 'Blinker', sans-serif;
     color: white;
 }
 
@@ -49,13 +85,82 @@ body{
 .weather-info .temperature {
     font-size: 20px;
     margin-right: 10px;
-    font-family: "Blinker", sans-serif;
+    font-family: 'Blinker', sans-serif;
     color: white;
 }
 
 .weather-info .weather-date {
     font-size: 14px;
     margin-top: 5px;
-    font-family: "Blinker", sans-serif;
+    font-family: 'Blinker', sans-serif;
     color: white;
 }
+
+
+
+
+
+
+
+
+
+
+.hexagon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 445px;
+    height: 512px;
+    background: url(/imagenes/Star%201.png) center center no-repeat;
+    background-size: contain;
+    z-index: -1;
+    animation: moveHexagon 40s linear infinite;
+}
+
+@keyframes moveHexagon {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    50% {
+        transform: translate(-40%, -50%);
+    }
+    100% {
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+
+
+
+.file-input {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.button-primary {
+    background-color: #9AC5F4;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+.button-secondary {
+    background-color: #FFEEBB;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+.button-primary:hover,
+.button-secondary:hover {
+    opacity: 0.8;
+}
+
+
