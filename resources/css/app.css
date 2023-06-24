@@ -62,20 +62,23 @@ h1.text-center {
 
 .weather-container {
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .weather-info {
     display: flex;
     align-items: center;
+    margin-right: 10px;
 }
 
 .weather-info h2 {
     font-weight: bold;
-    margin-right: 10px;
     font-family: 'Blinker', sans-serif;
     color: white;
+    margin-right: 10px;
 }
 
 .weather-info img {
@@ -84,17 +87,18 @@ h1.text-center {
 
 .weather-info .temperature {
     font-size: 20px;
-    margin-right: 10px;
     font-family: 'Blinker', sans-serif;
     color: white;
 }
 
-.weather-info .weather-date {
+.weather-date {
     font-size: 14px;
-    margin-top: 5px;
     font-family: 'Blinker', sans-serif;
     color: white;
+    text-align: left;
 }
+
+
 
 
 
@@ -120,15 +124,13 @@ h1.text-center {
 
 @keyframes moveHexagon {
     0% {
-        transform: translate(-50%, -50%);
-    }
-    50% {
-        transform: translate(-40%, -50%);
+        transform: translate(-50%, -50%) rotate(0deg);
     }
     100% {
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%) rotate(360deg);
     }
 }
+
 
 
 
@@ -162,5 +164,6 @@ h1.text-center {
 .button-secondary:hover {
     opacity: 0.8;
 }
+
 
 
