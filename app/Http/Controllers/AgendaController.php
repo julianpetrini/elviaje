@@ -80,6 +80,8 @@ class AgendaController extends Controller
     {
         $agenda = Agenda::findOrFail($id);
         $comentarios = $agenda->comentarios;
+
+        
     
         return view('agenda.show', compact('agenda', 'comentarios'));
     }

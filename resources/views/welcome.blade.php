@@ -1,26 +1,30 @@
+@extends('layouts.fondo')
 
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+@section('content')
+    <div class="container">
+        <div class="row justify-content-center align-items-center min-vh-100">
+            <div class="col-sm-12 col-md-6">
+                <div class="d-flex flex-column align-items-center">
+                    <!-- Enlace a la vista de hospedajes -->
+                    <a href="{{ route('hospedajes.index') }}" class="btn btn-primary mb-3">Ver Hospedajes</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
+                    <!-- Enlace a la vista de agenda -->
+                    <a href="{{ route('agenda.index') }}" class="btn btn-primary">Ver Agenda</a>
                 </div>
-            @endif
-
-            <!-- Enlace a la vista de hospedajes -->
-<a href="{{ route('hospedajes.index') }}">Ver Hospedajes</a>
-
-<!-- Enlace a la vista de agenda -->
-<a href="{{ route('agenda.index') }}">Ver Agenda</a>
-
-
-
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="weather-container">
+                    <div class="weather-info">
+                        <h2>{{ $weatherData['currentDay'] }}</h2>
+                        <img src="{{ $weatherData['weatherIcon'] }}" alt="Weather Icon">
+                        <p class="temperature">{{ $weatherData['temperature'] }} °C</p>
+                        <div class="weather-date">
+                            <p>{{ $weatherData['currentDate'] }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
 

@@ -7,6 +7,8 @@ use App\Http\Controllers\HospedajeController;
 use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\ComentarioController;
 
+use App\Http\Controllers\WeatherController;
+
 
 
 
@@ -63,10 +65,8 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
-// Rutas públicas (accesibles para usuarios no registrados)
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+Route::get('/', [WeatherController::class, 'index'])->name('welcome');
+
 
 Route::get('/agenda', [AgendaController::class, 'index'])->name('agenda.index');
 Route::get('/agenda/{agenda}', [AgendaController::class, 'show'])->name('agenda.show');

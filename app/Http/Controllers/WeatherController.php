@@ -35,4 +35,14 @@ class WeatherController extends Controller
 
         return $weatherData;
     }
+
+
+    public function index()
+{
+    $weatherData = $this->getWeather();
+
+    return view('welcome', compact('weatherData'));
+}
+
+    
 }

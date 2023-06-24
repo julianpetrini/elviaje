@@ -1,6 +1,8 @@
 @extends('layouts.fondo')
 
 
+
+
 @section('content')
 
     <h1>Detalles de la Actividad de Agenda</h1>
@@ -74,5 +76,5 @@
             </div>
         </form>
     @endauth
-
+   
 @endsection
