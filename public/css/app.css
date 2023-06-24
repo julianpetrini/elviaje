@@ -1359,7 +1359,7 @@ select{
 
 #app {
     position: relative;
-    padding: 1rem;
+    padding: 0rem;
     width: 100%;
     height: auto;
     left: 0;
