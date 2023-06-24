@@ -14,6 +14,8 @@
 
 <body id="app">
 
+
+    @include('navbar')
     @yield('weather')
 
     <div class="container">

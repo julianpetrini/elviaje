@@ -1,4 +1,6 @@
+@extends('layouts.fondo')
 
+@section('content')
     <h1>Cargar Hospedaje</h1>
 
     <form action="{{ route('hospedajes.store') }}" method="POST" enctype="multipart/form-data">
@@ -31,14 +33,14 @@
 
         <div>
             <label for="descripcion">Descripción:</label>
-            <textarea id="descripcion" name="descripcion" required></textarea>
+            <textarea id="descripcion" name="descripcion"></textarea>
         </div>
 
         <div>
             <label for="foto">Foto:</label>
-            <input type="file" id="foto" name="foto" required>
+            <input type="file" id="foto" name="foto">
         </div>
 
         <button type="submit">Guardar</button>
     </form>
-
+@endsection

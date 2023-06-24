@@ -1,4 +1,8 @@
-<h1>Crear nueva actividad de agenda</h1>
+@extends('layouts.fondo')
+
+@section('content')
+
+<h1>Let's make a plan</h1>
 
 <form action="{{ route('agenda.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
@@ -49,3 +53,4 @@
         <a href="{{ route('agenda.index') }}">Volver</a>
     </div>
 </form>
+@endsection

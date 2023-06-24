@@ -15,7 +15,7 @@ class CreateHospedajesTable extends Migration
             $table->date('check_in');
             $table->date('check_out');
             $table->integer('stars');
-            $table->text('descripcion');
+            $table->text('descripcion')->nullable();
             $table->string('foto')->nullable();
             $table->timestamps();
         });

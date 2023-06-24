@@ -1,8 +1,8 @@
 {
     "private": true,
     "scripts": {
-        "dev": "mix watch",
-        "build": "vite build"
+        "dev": "mix watch"
+        
     },
     "devDependencies": {
         "@popperjs/core": "^2.11.6",

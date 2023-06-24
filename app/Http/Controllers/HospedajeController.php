@@ -22,31 +22,33 @@ class HospedajeController extends Controller
     }
 
     public function store(Request $request)
-    {
-        $request->validate([
-            'nombre' => 'required',
-            'ubicacion' => 'required',
-            'check_in' => 'required|date',
-            'check_out' => 'required|date',
-            'stars' => 'required|integer',
-            'descripcion' => 'required',
-            'foto' => 'required|image',
-        ]);
+{
+    $request->validate([
+        'nombre' => 'required',
+        'ubicacion' => 'required',
+        'check_in' => 'required|date',
+        'check_out' => 'required|date',
+        'stars' => 'required|integer',
+    ]);
+
+    $hospedaje = new Hospedaje();
+    $hospedaje->nombre = $request->input('nombre');
+    $hospedaje->ubicacion = $request->input('ubicacion');
+    $hospedaje->check_in = $request->input('check_in');
+    $hospedaje->check_out = $request->input('check_out');
+    $hospedaje->stars = $request->input('stars');
+    $hospedaje->descripcion = $request->input('descripcion');
     
+    if ($request->hasFile('foto')) {
         $fotoPath = $request->file('foto')->store('public/hospedajes');
-    
-        $hospedaje = new Hospedaje();
-        $hospedaje->nombre = $request->input('nombre');
-        $hospedaje->ubicacion = $request->input('ubicacion');
-        $hospedaje->check_in = $request->input('check_in');
-        $hospedaje->check_out = $request->input('check_out');
-        $hospedaje->stars = $request->input('stars');
-        $hospedaje->descripcion = $request->input('descripcion');
         $hospedaje->foto = $fotoPath;
-        $hospedaje->save();
-    
-        return redirect()->route('hospedajes.index')->with('success', 'Hospedaje creado exitosamente.');
     }
+    
+    $hospedaje->save();
+
+    return redirect()->route('hospedajes.index')->with('success', 'Hospedaje creado exitosamente.');
+}
+
 
     public function upcoming()
     {
@@ -55,7 +57,11 @@ class HospedajeController extends Controller
         return view('hospedajes.upcoming', compact('upcomingHospedajes'));
     }
 
-
+    public function show(Hospedaje $hospedaje)
+    {
+        return view('hospedajes.show', compact('hospedaje'));
+    }
+    
 
     // Otros métodos como show(), edit(), update(), destroy() aquí...
 }

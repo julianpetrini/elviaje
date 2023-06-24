@@ -21,12 +21,12 @@ use App\Http\Controllers\WeatherController;
 Route::middleware(['auth'])->group(function () {
     // Rutas para hospedajes
     
-    //Route::get('/hospedajes/create', [HospedajeController::class, 'create'])->name('hospedajes.create');
-    //Route::post('/hospedajes', [HospedajeController::class, 'store'])->name('hospedajes.store');
-   
-    //Route::get('/hospedajes/{hospedaje}/edit', [HospedajeController::class, 'edit'])->name('hospedajes.edit');
-    //Route::put('/hospedajes/{hospedaje}', [HospedajeController::class, 'update'])->name('hospedajes.update');
-    //Route::delete('/hospedajes/{hospedaje}', [HospedajeController::class, 'destroy'])->name('hospedajes.destroy');
+    Route::get('/hospedajes/create', [HospedajeController::class, 'create'])->name('hospedajes.create');
+    Route::post('/hospedajes', [HospedajeController::class, 'store'])->name('hospedajes.store');
+    Route::get('/hospedajes/{hospedaje}/edit', [HospedajeController::class, 'edit'])->name('hospedajes.edit');
+    Route::put('/hospedajes/{hospedaje}', [HospedajeController::class, 'update'])->name('hospedajes.update');
+    Route::delete('/hospedajes/{hospedaje}', [HospedajeController::class, 'destroy'])->name('hospedajes.destroy');
+
 
     
 
