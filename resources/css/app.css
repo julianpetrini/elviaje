@@ -211,3 +211,14 @@ h1.text-center {
         opacity: 1;
     }
 }
+
+
+.linknavbar {
+    text-decoration: none !important;
+    color: inherit !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
+    transition: none !important;
+  }
+  
+  
