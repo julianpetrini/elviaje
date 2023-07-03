@@ -9,6 +9,8 @@
     padding: 0rem;
     width: 100%;
     height: auto;
+    min-height: 100vh;
+    max-width: auto;
     left: 0;
     top: 0;
     background: linear-gradient(180deg, #9ac5f4 0%, #99dbf5 70.83%, #a7ecee 100%);
@@ -220,5 +222,37 @@ h1.text-center {
     border-color: transparent !important;
     transition: none !important;
   }
+
+  //WELCOME IMAGENES BOX 
+
+  .image-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+.image-button:hover {
+  transform: scale(1.05);
+}
+
+.image-button img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.image-button-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
   
   
