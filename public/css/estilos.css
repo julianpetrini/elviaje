@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Blinker:wght@400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Blinker:wght@100;200;300;400;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -92,11 +93,11 @@ h1.text-center {
 .hexagon {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 445px;
-    height: 512px;
-    background: url(/imagenes/Star%201.png) center center no-repeat;
+    right: 10%; /* Disminuir la distancia desde el borde derecho */
+    transform: translate(50%, -50%); /* Ajustar la posición */
+    width: 30%; /* Cambiar a un porcentaje del ancho de la pantalla */
+    padding-bottom: 34.32%; /* Mantener la relación de aspecto del hexágono */
+    background: url(/imagenes/Star_1.png) center center no-repeat;
     background-size: contain;
     z-index: -1;
     animation: moveHexagon 40s linear infinite;
@@ -105,29 +106,66 @@ h1.text-center {
 .circle {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 0; /* Colocar el círculo a la izquierda */
     transform: translate(-50%, -50%);
-    width: 300px;
-    height: 300px;
-    background: url(/imagenes/circle.png) center center no-repeat;
+    width: 20%; /* Cambiar a un porcentaje del ancho de la pantalla */
+    padding-bottom: 20%; /* Mantener la relación de aspecto del círculo */
+    background: url(/imagenes/Star_3.png) center center no-repeat;
     background-size: contain;
-    z-index: -1;
-    animation: moveCircle 30s linear infinite;
+    z-index: 0;
+    animation: scaleCircle 20s linear infinite; /* Cambiar la duración de la animación */
 }
+
+@media (max-width: 767px) {
+  /* Estilos para dispositivos móviles */
+  .hexagon {
+    width: 87%; /* Aumentar el tamaño del hexágono en dispositivos móviles */
+    padding-bottom: 100%; /* Ajustar la relación de aspecto del hexágono en dispositivos móviles */
+    left: -5%;/* Disminuir aún más la distancia desde el borde derecho */
+  }
+  
+  .circle {
+    width: 99%; /* Aumentar el tamaño del círculo en dispositivos móviles */
+    padding-bottom: 100%; /* Ajustar la relación de aspecto del círculo en dispositivos móviles */
+    left: 15%;
+    top:30%;
+  }
+}
+
+
+
 
 @keyframes moveHexagon {
     0% {
-        transform: translate(-50%, -50%) rotate(0deg);
+        transform: translate(50%, -50%) rotate(0deg);
     }
     100% {
-        transform: translate(-50%, -50%) rotate(360deg);
+        transform: translate(50%, -50%) rotate(360deg);
     }
 }
 
-@keyframes moveCircle {
+@keyframes scaleCircle {
     0% {
-        transform: translate(-50%, -50%) rotate(0deg);
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1); /* Expandir el círculo */
     }
     100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-   .
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+
+
+.titulo{
+    font-family: 'Baskervville', serif;
+    line-height: 1.2;
+    font-size: 41px;
+}
+
+
+.container{
+    padding-left: 13px;
+    padding-right: 13px;
+}
