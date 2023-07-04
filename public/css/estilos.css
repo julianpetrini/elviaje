@@ -8,15 +8,14 @@
 #app {
     position: relative;
     padding: 0rem;
-    width: 100%;
-    height: auto;
-    min-height: 100vh;
-    max-width: auto;
-    left: 0;
-    top: 0;
+    width: 100vw;
+    height: 100vh;
     background: linear-gradient(180deg, #3D98FB 0%, #99DBF5 70.83%, #A7ECEE 100%);
+    background-repeat: no-repeat;
     background-size: cover;
 }
+
+
 
 body {
     padding: 0;
@@ -121,8 +120,10 @@ h1.text-center {
   .hexagon {
     width: 87%; /* Aumentar el tamaño del hexágono en dispositivos móviles */
     padding-bottom: 100%; /* Ajustar la relación de aspecto del hexágono en dispositivos móviles */
-    left: -5%;/* Disminuir aún más la distancia desde el borde derecho */
-  }
+    left: 0%;;/* Disminuir aún más la distancia desde el borde derecho */
+    position: fixed;
+}
+  
   
   .circle {
     width: 99%; /* Aumentar el tamaño del círculo en dispositivos móviles */
@@ -131,7 +132,7 @@ h1.text-center {
     top:30%;
   }
 }
-
+ 
 
 
 
