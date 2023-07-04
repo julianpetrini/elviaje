@@ -25,9 +25,15 @@
 <body id="app">
     <div class="contenedor">
         @include('navbar')
-        <div class="hexagon-container">
-            <div class="hexagon"></div>
+        <div class="container">
+            <div class="top-left">
+                <div class="circle"></div>
+            </div>
+            <div class="top-right">
+                <div class="hexagon"></div>
+            </div>
         </div>
+        
 
         @yield('weather')
 
