@@ -1,21 +1,10 @@
 @extends('layouts.fondo')
-
+@include('navbar_weather')
 
 @section('content')
 
 
-    <div class="weather-container">
-        <div class="weather-info">
-            <h2>{{ $weatherData['currentDay'] }}</h2>
-            <img src="{{ $weatherData['weatherIcon'] }}" alt="Weather Icon">
-            <p class="temperature">{{ $weatherData['temperature'] }} °C</p>
-            <div class="weather-date">
-                <p>{{ $weatherData['currentDate'] }}</p>
-            </div>
-        </div>
-    </div>
-
-
+    
     <!-- Carrusel con la actividad más próxima -->
     @if ($actividades->isNotEmpty())
         <div id="carousel" class="carousel slide" data-ride="carousel">

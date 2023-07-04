@@ -7,14 +7,15 @@
 
 #app {
     position: relative;
-    padding: 0rem;
+    padding: 0;
+    margin: 0;
     width: 100vw;
-    height: 100vh;
+    height: auto;
     background: linear-gradient(180deg, #3D98FB 0%, #99DBF5 70.83%, #A7ECEE 100%);
     background-repeat: no-repeat;
     background-size: cover;
+    box-sizing: border-box;
 }
-
 
 
 body {
@@ -112,7 +113,7 @@ h1.text-center {
     background: url(/imagenes/Star_3.png) center center no-repeat;
     background-size: contain;
     z-index: 0;
-    animation: scaleCircle 20s linear infinite; /* Cambiar la duración de la animación */
+    /*animation: scaleCircle 20s linear infinite;  Cambiar la duración de la animación */
 }
 
 @media (max-width: 767px) {
@@ -147,13 +148,13 @@ h1.text-center {
 
 @keyframes scaleCircle {
     0% {
-        transform: translate(-50%, -50%) scale(1);
+        transform: translate(-50%, -50%) scale(0.9);
     }
     50% {
-        transform: translate(-50%, -50%) scale(1.1); /* Expandir el círculo */
+        transform: translate(-50%, -50%) scale(1); /* Expandir el círculo */
     }
     100% {
-        transform: translate(-50%, -50%) scale(1);
+        transform: translate(-50%, -50%) scale(0.9);
     }
 }
 

@@ -24,7 +24,7 @@
 
 <body id="app">
     <div class="contenedor">
-        @include('navbar')
+      
         <div class="container">
             <div class="top-left">
                 <div class="circle"></div>

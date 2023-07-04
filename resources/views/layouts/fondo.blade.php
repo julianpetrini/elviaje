@@ -18,7 +18,7 @@
 </head>
 
 <body id="app">
-    @include('navbar')
+  
     <div class="hexagon-container">
         <div class="hexagon"></div>
     </div>
