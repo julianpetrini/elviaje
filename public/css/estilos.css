@@ -15,9 +15,9 @@
     top: 0;
     background: linear-gradient(
         180deg,
-        #9ac5f4 0%,
-        #99dbf5 70.83%,
-        #a7ecee 100%
+        #000000 0%,
+        #f59999 70.83%,
+        #09979c 100%
     );
     background-size: cover;
 }

@@ -1,4 +1,4 @@
-@extends('layouts.fondo')
+@extends('layouts.hotel_description_fondo')
 
 
 
