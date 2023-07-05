@@ -112,7 +112,8 @@ h1.text-center {
     padding-bottom: 20%; /* Mantener la relación de aspecto del círculo */
     background: url(/imagenes/Star_3.png) center center no-repeat;
     background-size: contain;
-    z-index: 0;
+    z-index: -1;
+    
     /*animation: scaleCircle 20s linear infinite;  Cambiar la duración de la animación */
 }
 
@@ -123,6 +124,7 @@ h1.text-center {
     padding-bottom: 100%; /* Ajustar la relación de aspecto del hexágono en dispositivos móviles */
     left: 0%;;/* Disminuir aún más la distancia desde el borde derecho */
     position: fixed;
+    z-index: -2;
 }
   
   

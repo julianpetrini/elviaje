@@ -1,6 +1,6 @@
 @extends('layouts.hotel_description_fondo')
 
-
+@include('navbar')
 
 @section('content')
     <div class="container">
