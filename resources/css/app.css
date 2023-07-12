@@ -22,7 +22,6 @@
     background-size: cover;
 }
 
-
 body {
     padding: 0;
     margin: 0;
@@ -194,9 +193,6 @@ h1.text-center {
     transition: none !important;
 }
 
-
-
-
 //WELCOME IMAGENES BOX
 
 .image-button {
@@ -218,6 +214,7 @@ h1.text-center {
     height: auto;
     border-radius: 8px;
     margin-bottom: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .image-button-inner {
@@ -227,10 +224,47 @@ h1.text-center {
     justify-content: center;
     height: 100%;
 }
-
 .cardwelcome {
-    background-image: url(/imagenes/mallorca1.jpg);
+    position: relative;
+    min-height: 21vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-size: cover;
     background-position: center;
-    min-height: 21vh;
-  }
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.agenda_w_img {
+    background-image: url(/imagenes/welcome_img2.jpg);
+}
+.hotel_w_img {
+    background-image: url(/imagenes/welcome_img_hotel.jpg);
+}
+.register_w_img {
+    background-image: url(/imagenes/welcome_register.jpg);
+}
+.log_w_img {
+    background-image: url(/imagenes/welcome_log.jpg);
+}
+
+.cardwelcome::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0.3, 0.4);
+    border-radius: 8px;
+}
+
+.cardwelcome .btn-primary,
+.cardwelcome p,
+.cardwelcome a {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+}
+
