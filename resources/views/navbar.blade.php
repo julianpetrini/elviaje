@@ -25,6 +25,19 @@
                             class="linknavbar py-2 px-3 text-sm font-medium text-white hover:text-black focus:text-black">
                             {{ __('Agenda') }}
                         </x-responsive-nav-link>
+
+                        @auth
+                        <x-responsive-nav-link :href="route('agenda.create')" :active="request()->routeIs('agenda.create')"
+                            class="linknavbar py-2 px-3 text-sm font-medium text-white hover:text-black focus:text-black">
+                            {{ __('Create Agenda Event') }}
+                        </x-responsive-nav-link>
+    
+                        <x-responsive-nav-link :href="route('hospedajes.create')" :active="request()->routeIs('hospedajes.create')"
+                            class="linknavbar py-2 px-3 text-sm font-medium text-white hover:text-black focus:text-black">
+                            {{ __('Create Hotel') }}
+                        </x-responsive-nav-link>
+                    @endauth
+
                     </div>
                 </div>
             </div>

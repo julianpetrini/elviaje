@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-transparent text-white dark:bg-gray-800" >
+<nav x-data="{ open: false }" class="bg-transparent text-white dark:bg-gray-800">
 
 
     <!-- Primary Navigation Menu -->
@@ -36,6 +36,45 @@
                             class="linknavbar py-2 px-3 text-sm font-medium text-white hover:text-black focus:text-black">
                             {{ __('Agenda') }}
                         </x-responsive-nav-link>
+
+                        @guest
+                            <x-responsive-nav-link :href="route('agenda.create')" :active="request()->routeIs('agenda.create')"
+                                class="linknavbar py-2 px-3 text-sm font-medium text-white hover:text-black focus:text-black whitespace-nowrap">
+                                {{ __('Log in') }}
+                            </x-responsive-nav-link>
+                        @endguest
+
+
+                        @auth
+                            <div class="flex items-center">
+                                <x-responsive-nav-link :href="route('agenda.create')" :active="request()->routeIs('agenda.create')"
+                                    class="linknavbar py-2 px-3 text-sm font-medium text-white hover:text-black focus:text-black whitespace-nowrap">
+                                    {{ __('Create Agenda') }}
+                                </x-responsive-nav-link>
+
+                                <x-responsive-nav-link :href="route('hospedajes.create')" :active="request()->routeIs('hospedajes.create')"
+                                    class="linknavbar py-2 px-3 text-sm font-medium text-white hover:text-black focus:text-black whitespace-nowrap">
+                                    {{ __('Create Hotel') }}
+                                </x-responsive-nav-link>
+
+                                <a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                    class="linknavbar py-2 px-3 text-sm font-medium text-white hover:text-black focus:text-black whitespace-nowrap">
+                                    {{ __('Log Out') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                    style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+
+
+
+
+
+                        @endauth
+
                     </div>
                 </div>
             </div>
