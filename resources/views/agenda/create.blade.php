@@ -1,7 +1,7 @@
 @extends('layouts.fondo')
 
 @section('content')
-
+@include('navbar')
 <div class="container">
     
 

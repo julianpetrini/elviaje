@@ -930,6 +930,9 @@ select{
 .grid-cols-1{
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
+.grid-cols-2{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
 .flex-col{
   flex-direction: column;
 }
@@ -1583,7 +1586,7 @@ h1.text-center {
     transition: none !important;
 }
 
-//WELCOME IMAGENES BOX
+WELCOME IMAGENES BOX
 
 .image-button {
     display: flex;
@@ -1624,7 +1627,10 @@ h1.text-center {
     background-position: center;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    
 }
+
+
 .agenda_w_img {
     background-image: url(/imagenes/welcome_img2.jpg);
 }
@@ -2249,5 +2255,4 @@ h1.text-center {
     padding-right: 2rem;
   }
 }
-
 
