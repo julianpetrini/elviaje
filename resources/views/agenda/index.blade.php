@@ -5,7 +5,7 @@
 
 
     
-    <!-- Carrusel con la actividad más próxima -->
+    <!-- Carrusel con la actividad más próxima 
     @if ($actividades->isNotEmpty())
         <div id="carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -22,7 +22,7 @@
             </div>
         </div>
     @endif
-
+-->
 
     <a href="{{ url('/') }}" class="btn btn-primary">Volver</a>
 
