@@ -194,6 +194,9 @@ h1.text-center {
     transition: none !important;
 }
 
+
+
+
 //WELCOME IMAGENES BOX
 
 .image-button {
@@ -224,3 +227,10 @@ h1.text-center {
     justify-content: center;
     height: 100%;
 }
+
+.cardwelcome {
+    background-image: url(/imagenes/mallorca1.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 21vh;
+  }

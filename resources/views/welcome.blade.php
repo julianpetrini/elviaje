@@ -2,7 +2,7 @@
 @include('navbar_weather')
 
 @section('content')
-    <div class="container">
+    <div class="container pt-4">
         <!--
                 <div class="col-sm-12 col-md-6">
                     <div class="weather-container">
@@ -75,17 +75,16 @@
             </div>
         -->
 
-        <div class="flex flex-wrap">
-            <div class="cardwelcome max-w-sm z-50 ">
-              <div class="p-5 flex flex-col items-center justify-center">
+            <div class="cardwelcome max-w-sm z-50 rounded drop-shadow-xl">
+              <div class="p-5 flex flex-col items-center justify-center ">
                 <a href="{{ route('hospedajes.show', 1) }}" class="btn-primary">
-                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white">PRUEBONA</h5>
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white">HOTEL</h5>
                 </a>
                 <p class="mb-3 font-normal text-white dark:text-gray-400">Here you will find the details</p>
-                <a href="{{ route('hospedajes.show', 1) }}" class="inline-flex items-center mr-2 px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                  Read more
+                <!--<a href="{{ route('hospedajes.show', 1) }}" class="inline-flex items-center mr-2 px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                  view details
                   <img src="{{ asset('imagenes/location.png') }}" alt="Ubicación" class="w-5 h-6 ml-2">
-                </a>
+                </a>-->
               </div>
             </div>
           </div>

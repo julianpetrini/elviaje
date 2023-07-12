@@ -1371,6 +1371,10 @@ select{
 .ring-opacity-5{
   --tw-ring-opacity: 0.05;
 }
+.drop-shadow-xl{
+  --tw-drop-shadow: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
 .filter{
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
@@ -1598,6 +1602,9 @@ h1.text-center {
     transition: none !important;
 }
 
+
+
+
 //WELCOME IMAGENES BOX
 
 .image-button {
@@ -1628,6 +1635,13 @@ h1.text-center {
     justify-content: center;
     height: 100%;
 }
+
+.cardwelcome {
+    background-image: url(/imagenes/mallorca1.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 21vh;
+  }
 
 .hover\:border-blue-500:hover{
   --tw-border-opacity: 1;
@@ -2251,4 +2265,3 @@ h1.text-center {
     padding-right: 2rem;
   }
 }
-

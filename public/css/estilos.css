@@ -176,10 +176,5 @@ h1.text-center {
 
 
 
-//ESTO ES PARA LAS IMAGENES DE BIENVENIDA
 
-.cardwelcome {
-    background-image: url(/imagenes/mallorca1.jpg);
-    background-size: cover;
-    background-position: center;
-  }
+
