@@ -72,42 +72,46 @@
 
                 </div>
             @endguest
-        
 
-        @auth
 
-            <div class="w-full md:w-1/2 px-4 mb-4">
+            @auth
 
-                <div
-                    class="flex justify-center items-center cardwelcome hotel_w_img aspect-w-1 aspect-h-1 max-w-sm z-50 rounded-lg shadow-xl">
-                    <a href="{{ route('agenda.create') }}" class="btn-primary">
-                        <div class="p-5 flex flex-col items-center">
-                            <p class="text-center mb-2 text-2xl font-bold tracking-tight text-white dark:text-white text-link">
-                                Create a plan</p>
-                            <p class="mb-3 font-normal text-white dark:text-gray-400 text-center text-link">add a new plan
-                                to your trip</p>
-                        </div>
-                    </a>
+                <div class="w-full md:w-1/2 px-4 mb-4">
+
+                    <div
+                        class="flex justify-center items-center cardwelcome hotel_w_img aspect-w-1 aspect-h-1 max-w-sm z-50 rounded-lg shadow-xl">
+                        <a href="{{ route('agenda.create') }}" class="btn-primary">
+                            <div class="p-5 flex flex-col items-center">
+                                <p
+                                    class="text-center mb-2 text-2xl font-bold tracking-tight text-white dark:text-white text-link">
+                                    Create a plan</p>
+                                <p class="mb-3 font-normal text-white dark:text-gray-400 text-center text-link">add a new plan
+                                    to your trip</p>
+                            </div>
+                        </a>
+                    </div>
+
                 </div>
 
-            </div>
+                <div class="w-full md:w-1/2 px-4 mb-4">
 
-            <div class="w-full md:w-1/2 px-4 mb-4">
+                    <div
+                        class="flex justify-center items-center cardwelcome hotel_w_img aspect-w-1 aspect-h-1 max-w-sm z-50 rounded-lg shadow-xl">
+                        <a href="{{ route('hospedajes.create') }}" class="btn-primary">
+                            <div class="p-5 flex flex-col items-center">
+                                <p
+                                    class="text-center mb-2 text-2xl font-bold tracking-tight text-white dark:text-white text-link">
+                                    Add a Hotel</p>
+                                <p class="mb-3 font-normal text-white dark:text-gray-400 text-center text-link">add a new place
+                                    to sleep</p>
+                            </div>
+                        </a>
+                    </div>
 
-                <div
-                    class="flex justify-center items-center cardwelcome hotel_w_img aspect-w-1 aspect-h-1 max-w-sm z-50 rounded-lg shadow-xl">
-                    <a href="{{ route('hospedajes.create') }}" class="btn-primary">
-                        <div class="p-5 flex flex-col items-center">
-                            <p class="text-center mb-2 text-2xl font-bold tracking-tight text-white dark:text-white text-link">
-                                Add a Hotel</p>
-                            <p class="mb-3 font-normal text-white dark:text-gray-400 text-center text-link">add a new place
-                                to sleep</p>
-                        </div>
-                    </a>
                 </div>
 
-            </div>
-
-        @endauth
-    </div>
-@endsection
+            @endauth
+        </div>
+   
+    @endsection
+    

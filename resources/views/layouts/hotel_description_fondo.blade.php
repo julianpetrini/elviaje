@@ -45,7 +45,9 @@
                 @yield('content')
             </div>
         </div>
-
+        <footer class="footer">
+            @yield('footer')
+        </footer>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.5.0/js/bootstrap.bundle.min.js"></script>
         <script src="{{ mix('js/app.js') }}"></script>
     </div>
