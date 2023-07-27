@@ -31,7 +31,7 @@
 
                         <x-responsive-nav-link :href="route('agenda.create')" :active="request()->routeIs('agenda.create')"
                             class="py-2 px-3 text-sm font-medium text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
-                            {{ __('Create Agenda Event') }}
+                            {{ __('Create Agenda') }}
                         </x-responsive-nav-link>
 
                         <x-responsive-nav-link :href="route('hospedajes.create')" :active="request()->routeIs('hospedajes.create')"
@@ -119,7 +119,7 @@
                 </x-responsive-nav-link>
 
                 <x-responsive-nav-link :href="route('agenda.create')" :active="request()->routeIs('agenda.create')">
-                    {{ __('Create Agenda Event') }}
+                    {{ __('Create Agenda') }}
                 </x-responsive-nav-link>
 
                 <x-responsive-nav-link :href="route('hospedajes.create')" :active="request()->routeIs('hospedajes.create')">

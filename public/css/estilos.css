@@ -91,16 +91,19 @@ h1.text-center {
 }
 
 .hexagon {
-    position: absolute;
-    top: 50%;
-    right: 10%; /* Disminuir la distancia desde el borde derecho */
-    transform: translate(50%, -50%); /* Ajustar la posición */
-    width: 30%; /* Cambiar a un porcentaje del ancho de la pantalla */
-    padding-bottom: 34.32%; /* Mantener la relación de aspecto del hexágono */
+    position: relative;
+    width: 100%;
+    padding-bottom: 115.47%; /* Mantener la relación de aspecto del hexágono */
+    transform: rotate(0deg);
     background: url(/imagenes/Star_1.png) center center no-repeat;
     background-size: contain;
-    z-index: -1;
     animation: moveHexagon 40s linear infinite;
+}
+
+.hexagon-container {
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
 }
 
 .circle {
@@ -141,10 +144,10 @@ h1.text-center {
 
 @keyframes moveHexagon {
     0% {
-        transform: translate(50%, -50%) rotate(0deg);
+        transform: rotate(0deg);
     }
     100% {
-        transform: translate(50%, -50%) rotate(360deg);
+        transform: rotate(360deg);
     }
 }
 
@@ -169,12 +172,22 @@ h1.text-center {
 }
 
 
-.container{
-    padding-left: 13px;
-    padding-right: 13px;
+
+.container {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    background: linear-gradient(180deg, #3D98FB 0%, #99DBF5 70.83%, #A7ECEE 100%);
 }
 
-
-
-
-
+.top-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%; /* Ajustar el ancho según sea necesario */
+    height: 50%; /* Ajustar la altura según sea necesario */
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    z-index: -1;
+}
