@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/estilos.css') }}"> <!-- Agregado -->
+    <!--<link rel="stylesheet" href="{{ asset('css/estilos.css') }}"> -- Agregado -->
 
 </head>
 
@@ -37,7 +37,7 @@
 
         @yield('weather')
 
-        <div class="container">
+        <div class="contenedor flex items-center justify-center">
             <!-- Aquí puedes incluir una barra de navegación, encabezado u otros elementos comunes -->
 
             <!-- Contenido de la página -->

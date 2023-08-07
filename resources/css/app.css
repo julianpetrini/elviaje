@@ -94,18 +94,6 @@ h1.text-center {
     text-align: left;
 }
 
-.hexagon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 445px;
-    height: 512px;
-    background: url(/imagenes/Star%201.png) center center no-repeat;
-    background-size: contain;
-    z-index: -1;
-    animation: moveHexagon 40s linear infinite;
-}
 
 @keyframes moveHexagon {
     0% {

@@ -897,13 +897,6 @@ select{
 .w-screen{
   width: 100vw;
 }
-.w-max{
-  width: -moz-max-content;
-  width: max-content;
-}
-.w-32{
-  width: 8rem;
-}
 .max-w-6xl{
   max-width: 72rem;
 }
@@ -985,9 +978,6 @@ select{
 .gap-4{
   gap: 1rem;
 }
-.gap-2{
-  gap: 0.5rem;
-}
 .space-x-8 > :not([hidden]) ~ :not([hidden]){
   --tw-space-x-reverse: 0;
   margin-right: calc(2rem * var(--tw-space-x-reverse));
@@ -1002,16 +992,6 @@ select{
   --tw-space-y-reverse: 0;
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
-}
-.space-y-4 > :not([hidden]) ~ :not([hidden]){
-  --tw-space-y-reverse: 0;
-  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
-}
-.space-x-4 > :not([hidden]) ~ :not([hidden]){
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1rem * var(--tw-space-x-reverse));
-  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 .overflow-hidden{
   overflow: hidden;
@@ -1566,18 +1546,6 @@ h1.text-center {
     text-align: left;
 }
 
-.hexagon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 445px;
-    height: 512px;
-    background: url(/imagenes/Star%201.png) center center no-repeat;
-    background-size: contain;
-    z-index: -1;
-    animation: moveHexagon 40s linear infinite;
-}
 
 @keyframes moveHexagon {
     0% {
@@ -2357,36 +2325,8 @@ WELCOME IMAGENES BOX
     width: 50%;
   }
 
-  .md\:w-auto{
-    width: auto;
-  }
-
-  .md\:w-32{
-    width: 8rem;
-  }
-
-  .md\:flex-initial{
-    flex: 0 1 auto;
-  }
-
   .md\:flex-row{
     flex-direction: row;
-  }
-
-  .md\:justify-center{
-    justify-content: center;
-  }
-
-  .md\:space-x-4 > :not([hidden]) ~ :not([hidden]){
-    --tw-space-x-reverse: 0;
-    margin-right: calc(1rem * var(--tw-space-x-reverse));
-    margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
-  }
-
-  .md\:space-y-0 > :not([hidden]) ~ :not([hidden]){
-    --tw-space-y-reverse: 0;
-    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
-    margin-bottom: calc(0px * var(--tw-space-y-reverse));
   }
 
   .md\:text-5xl{
@@ -2405,10 +2345,6 @@ WELCOME IMAGENES BOX
 }
 
 @media (min-width: 1024px){
-
-  .lg\:w-1\/2{
-    width: 50%;
-  }
 
   .lg\:w-3\/4{
     width: 75%;
