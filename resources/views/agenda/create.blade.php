@@ -11,7 +11,7 @@
 
             <div class="form-group flex flex-col">
                 <label for="titulo" class="block text-white font-medium text-sm mb-2">Title of the plan</label>
-                <input type="text" name="titulo" id="titulo"
+                <input type="text" name="titulo" id="titulo" maxlength="50"
                     class="border border-blue-200 rounded-lg p-4 w-full h-7 font-medium text-base bg-transparent focus:outline-none text-white"
                     required>
             </div>
@@ -70,8 +70,8 @@
             </div>
 
             <div class="form-group flex flex-col mb-4">
-                <label for="descripcion" class="block text-white font-medium text-sm mb-2">Description:</label>
-                <textarea name="descripcion" id="descripcion" rows="4"
+                <label for="descripcion" class="block text-white font-medium text-sm mb-2">Description</label>
+                <textarea name="descripcion" id="descripcion" rows="4" maxlength="450"
                     class="border border-blue-200 rounded-lg p-4 w-full font-medium text-base bg-transparent focus:outline-none text-white focus:bg-sky-200 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 focus:rounded-lg"></textarea>
             </div>
 

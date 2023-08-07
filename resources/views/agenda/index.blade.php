@@ -1,4 +1,4 @@
-@extends('layouts.fondo')
+@extends('layouts.hotel_description_fondo')
 @include('navbar_weather')
 
 @section('content')
@@ -24,6 +24,7 @@
     @endif
             -->
     <div class="pt-3">
+        
         <a href="{{ url('/') }}"
             class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg ">Back</a>
     </div>
