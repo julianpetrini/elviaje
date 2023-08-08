@@ -37,6 +37,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/sleeping', [SleepingController::class, 'store'])->name('sleeping.store');
     Route::get('/sleepings/{sleeping}/edit', [SleepingController::class, 'edit'])->name('sleepings.edit');
     Route::delete('/sleepings/{sleeping}', [SleepingController::class, 'destroy'])->name('sleepings.destroy');
+    Route::put('/sleepings/{sleeping}', [SleepingController::class, 'update'])->name('sleepings.update');
 
 
     

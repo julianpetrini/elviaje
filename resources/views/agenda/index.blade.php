@@ -5,34 +5,35 @@
 
 
 
-    <!-- Carrusel con la actividad más próxima
-                @if ($actividades->isNotEmpty())
-    <div id="carousel" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            @php
-                                $actividadProxima = $actividades->first();
-                            @endphp
-                            @foreach ($actividades as $actividad)
-    <div class="carousel-item{{ $actividad->id == $actividadProxima->id ? ' active' : '' }}">
-                                    <img src="{{ asset($actividad->imagen) }}" alt="{{ $actividad->titulo }}" class="carousel-image">
-                                    <h3 class="text-xl font-semibold">{{ $actividad->titulo }}</h3>
-                                    <p>{{ $actividad->descripcion }}</p>
-                                </div>
-    @endforeach
-                        </div>
-                    </div>
-    @endif
-            -->
-    <div class="pt-3">
-        
-        <a href="{{ url('/') }}"
-            class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg ">Back</a>
+@if ($actividades->isEmpty())
+    <p class="text-center text-2xl py-4 text-white">Still no plan, why don't start planning your holidays?</p>
+    <div class="text-center mt-6">
+        <a href="{{ route('agenda.create') }}"
+            class="inline-block px-4 py-2 bg-sky-500 hover:bg-sky-700 text-white rounded-md">Create new plan</a>
     </div>
 
+@else
 
+<div class="pt-3">
+    <a href="{{ url('/') }}"
+        class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg ">Back</a>
+</div>
+    <!-- Carrusel con la actividad más próxima -->
+    <div id="carousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            @php
+                $actividadProxima = $actividades->first();
+            @endphp
+            @foreach ($actividades as $actividad)
+                <div class="carousel-item{{ $actividad->id == $actividadProxima->id ? ' active' : '' }}">
+                    <img src="{{ asset($actividad->imagen) }}" alt="{{ $actividad->titulo }}" class="carousel-image">
+                    <h3 class="text-xl font-semibold">{{ $actividad->titulo }}</h3>
+                    <p>{{ $actividad->descripcion }}</p>
+                </div>
+            @endforeach
+        </div>
+    </div>
 
-
-    <!-- Resto del contenido -->
     <form action="{{ route('agenda.index') }}" method="GET">
         <div class="mb-4">
             <label for="categoria" class="mr-2">Filter by category:</label>
@@ -47,8 +48,6 @@
                 class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-md ml-2">Filter</button>
         </div>
     </form>
-
-
 
     @foreach ($actividades->groupBy('fecha')->sortKeys() as $fecha => $actividadesDia)
         @foreach ($actividadesDia->sortBy('hora_inicio') as $actividad)
@@ -67,8 +66,7 @@
         @endforeach
     @endforeach
 
-
-
-
     <a href="{{ route('agenda.create') }}" class="bg-green-500 text-white px-4 py-2 rounded-md">Create new plan</a>
+@endif
+
 @endsection

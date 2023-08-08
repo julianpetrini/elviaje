@@ -8,7 +8,7 @@
 
                 <div
                     class="flex justify-center items-center cardwelcome hotel_w_img aspect-w-1 aspect-h-1 max-w-sm z-50 rounded-lg shadow-xl">
-                    <a href="{{ route('hospedajes.show', 1) }}" class="btn-primary">
+                    <a href="{{ route('sleeping.index') }}" class="btn-primary">
                         <div class="p-5 flex flex-col items-center">
                             <p
                                 class="text-center mb-2 text-2xl font-bold tracking-tight text-white dark:text-white text-link">
@@ -97,7 +97,7 @@
 
                     <div
                         class="flex justify-center items-center cardwelcome hotel_w_img aspect-w-1 aspect-h-1 max-w-sm z-50 rounded-lg shadow-xl">
-                        <a href="{{ route('hospedajes.create') }}" class="btn-primary">
+                        <a href="{{ route('sleeping.create') }}" class="btn-primary">
                             <div class="p-5 flex flex-col items-center">
                                 <p
                                     class="text-center mb-2 text-2xl font-bold tracking-tight text-white dark:text-white text-link">

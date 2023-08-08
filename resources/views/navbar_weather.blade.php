@@ -52,7 +52,7 @@
                                     {{ __('Create Agenda') }}
                                 </x-responsive-nav-link>
 
-                                <x-responsive-nav-link :href="route('hospedajes.create')" :active="request()->routeIs('hospedajes.create')"
+                                <x-responsive-nav-link :href="route('sleeping.create')" :active="request()->routeIs('sleeping.create')"
                                     class="linknavbar py-2 px-3 text-sm font-medium text-white hover:text-black focus:text-black whitespace-nowrap">
                                     {{ __('Create Hotel') }}
                                 </x-responsive-nav-link>
@@ -115,7 +115,7 @@
                         {{ __('Create Agenda Event') }}
                     </x-responsive-nav-link>
 
-                    <x-responsive-nav-link :href="route('hospedajes.create')" :active="request()->routeIs('hospedajes.create')"
+                    <x-responsive-nav-link :href="route('sleeping.create')" :active="request()->routeIs('sleeping.create')"
                         class="linknavbar block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-white hover:text-black hover:border-blue-500 focus:text-black focus:border-blue-500 transition duration-150 ease-in-out">
                         {{ __('Create Hotel') }}
                     </x-responsive-nav-link>
