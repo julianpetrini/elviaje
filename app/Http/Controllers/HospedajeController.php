@@ -63,5 +63,5 @@ class HospedajeController extends Controller
     }
     
 
-    // Otros métodos como show(), edit(), update(), destroy() aquí...
+    
 }

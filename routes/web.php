@@ -9,6 +9,8 @@ use App\Http\Controllers\ComentarioController;
 
 use App\Http\Controllers\WeatherController;
 
+use App\Http\Controllers\SleepingController;
+
 
 
 
@@ -26,6 +28,15 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/hospedajes/{hospedaje}/edit', [HospedajeController::class, 'edit'])->name('hospedajes.edit');
     Route::put('/hospedajes/{hospedaje}', [HospedajeController::class, 'update'])->name('hospedajes.update');
     Route::delete('/hospedajes/{hospedaje}', [HospedajeController::class, 'destroy'])->name('hospedajes.destroy');
+
+
+    //SLEEPING
+
+    Route::get('/sleeping', [SleepingController::class, 'index'])->name('sleeping.index');
+    Route::get('/sleeping/create', [SleepingController::class, 'create'])->name('sleeping.create');
+    Route::post('/sleeping', [SleepingController::class, 'store'])->name('sleeping.store');
+    Route::get('/sleepings/{sleeping}/edit', [SleepingController::class, 'edit'])->name('sleepings.edit');
+    Route::delete('/sleepings/{sleeping}', [SleepingController::class, 'destroy'])->name('sleepings.destroy');
 
 
     
