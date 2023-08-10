@@ -59,9 +59,17 @@
                 </div>
             </div>
 
-            <div class="container pt-5">
+            
             @endauth
 
         </div>
+
+        <div class="container-title-box">
+            <h1 class="welcome-title text-center">Lovsi Reisen</h1>
+            <p class="lead text-center">Whether you're planning a relaxing getaway or an exciting adventure, we've got you
+                covered. Explore the beauty of Mallorca while effortlessly organizing your trip from start to finish </p>
+        </div>
     </div>
+
+    @include('footer')
 @endsection
