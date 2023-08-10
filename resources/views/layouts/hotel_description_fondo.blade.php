@@ -16,41 +16,38 @@
         href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Blinker:wght@100;200;300;400;600;700;800&display=swap"
         rel="stylesheet">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-    <!--<link rel="stylesheet" href="{{ asset('css/estilos.css') }}"> -- Agregado -->
+
 
 </head>
 
-<body id="app">
-    <div class="contenedor">
-      
-        <div class="container">
-            <div class="top-left">
-                <div class="circle"></div>
-            </div>
-            <div class="top-right">
-                <div class="hexagon"></div>
-            </div>
-        </div>
-        
+<body class="background-index">
 
-        @yield('weather')
 
-        <div class="contenedor flex items-center justify-center">
-            <!-- Aquí puedes incluir una barra de navegación, encabezado u otros elementos comunes -->
+    <div class="circle"></div>
+    <div class="hexagon"></div>
 
-            <!-- Contenido de la página -->
-            <div class="max-w-screen-lg mx-auto">
-                @yield('content')
-            </div>
-        </div>
-        <footer class="footer">
-            @yield('footer')
-        </footer>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.5.0/js/bootstrap.bundle.min.js"></script>
-        <script src="{{ mix('js/app.js') }}"></script>
-    </div>
+
+    @yield('weather')
+
+
+
+    @yield('content')
+
+
+    <footer class="footer">
+        @yield('footer')
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+    </script>
+    <script src="{{ mix('js/app.js') }}"></script>
+
 </body>
 
 </html>
