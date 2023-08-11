@@ -13,63 +13,70 @@
 
     <!--Vamos a probar con las tarjetas bootstrap-->
     <div class="container-menu">
-        <div class="container-card-welcome">
-            <div class="agenda-card-img "><a href="{{ route('agenda.index') }}" class="btn-primary">
+        <a href="{{ route('agenda.index') }}" class="btn-primary">
+            <div class="container-card-welcome">
+                <div class="agenda-card-img ">
 
                     <h5 class="card-title text-white text-center ">AGENDA</h5>
-                </a>
-            </div>
-        </div>
 
-        <div class="container-card-welcome">
-            <div class="hotel-card-img "><a href="{{ route('sleeping.index') }}" class="btn-primary">
-                    <h5 class="card-title text-white text-center ">HOTEL</h5>
-                </a>
+                </div>
             </div>
-        </div>
+        </a>
+        <a href="{{ route('sleeping.index') }}" class="btn-primary">
+            <div class="container-card-welcome">
+                <div class="hotel-card-img ">
+                    <h5 class="card-title text-white text-center ">HOTEL</h5>
+
+                </div>
+            </div>
+        </a>
         @guest
 
-
-            <div class="container-card-welcome">
-                <div class="agenda-card-img "><a href="{{ route('login') }}" class="btn-primary">
+            <a href="{{ route('login') }}" class="btn-primary">
+                <div class="container-card-welcome">
+                    <div class="agenda-card-img ">
                         <h5 class="card-title text-white text-center ">LOG IN</h5>
-                    </a>
-                </div>
-            </div>
 
-            <div class="container-card-welcome">
-                <div class="hotel-card-img "><a href="{{ route('register') }}" class="btn-primary">
-                        <h5 class="card-title text-white text-center ">REGISTER</h5>
-                    </a>
+                    </div>
                 </div>
-            </div>
+            </a>
+            <a href="{{ route('register') }}" class="btn-primary">
+                <div class="container-card-welcome">
+                    <div class="hotel-card-img ">
+                        <h5 class="card-title text-white text-center ">REGISTER</h5>
+
+                    </div>
+                </div>
+            </a>
         @endguest
         @auth
-            <div class="container-card-welcome">
-                <div class="agenda-card-img "><a href="{{ route('agenda.create') }}" class="btn-primary">
+            <a href="{{ route('agenda.create') }}" class="btn-primary">
+                <div class="container-card-welcome">
+                    <div class="agenda-card-img ">
                         <h5 class="card-title text-white text-center ">CREATE A PLAN</h5>
-                    </a>
-                </div>
-            </div>
 
-            <div class="container-card-welcome">
-                <div class="hotel-card-img "><a href="{{ route('sleeping.create') }}" class="btn-primary">
+                    </div>
+                </div>
+            </a>
+            <a href="{{ route('sleeping.create') }}" class="btn-primary">
+                <div class="container-card-welcome">
+                    <div class="hotel-card-img ">
                         <h5 class="card-title text-white text-center ">ADD WHERE YOU ARE SLEEPING</h5>
-                    </a>
+
+                    </div>
                 </div>
-            </div>
+            </a>
 
-            
-            @endauth
+        @endauth
 
-        </div>
-
-        <div class="container-title-box">
-            <h1 class="welcome-title text-center">Lovsi Reisen</h1>
-            <p class="lead text-center">Whether you're planning a relaxing getaway or an exciting adventure, we've got you
-                covered. Explore the beauty of Mallorca while effortlessly organizing your trip from start to finish </p>
-        </div>
     </div>
+
+    <div class="container-title-box">
+        <h1 class="welcome-title text-center">Lovsi Reisen</h1>
+        <p class="lead text-center">Whether you're planning a relaxing getaway or an exciting adventure, we've got you
+            covered. Explore the beauty of Mallorca while effortlessly organizing your trip from start to finish </p>
+    </div>
+    
 
     @include('footer')
 @endsection

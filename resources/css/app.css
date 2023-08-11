@@ -25,6 +25,8 @@
 .container-title-box{
     margin: 1rem;
     padding:12px;
+    white-space: normal;
+    overflow: hidden;
 }
 
 .container-menu{
