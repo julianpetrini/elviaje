@@ -1,3 +1,5 @@
+
+
 <!--Footer container-->
 @section('footer')
     <footer class="bg-light text-center">
