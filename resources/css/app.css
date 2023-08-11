@@ -14,7 +14,7 @@
 
 
 .welcome-title{
-    color: white;
+    color: #495057;
     font-family: 'Libre Baskerville', serif;
     font-weight: 400;
     font-size: 2.8rem;
@@ -353,10 +353,13 @@ a {
     border: none;
 }
 
-.border-none{
-    border:none;
+boton-footer{
+    color: white;
+    font-weight: 500;
+    background: black;
+    padding: 12;
+    border-radius: 15px;
 }
-
 
 
 

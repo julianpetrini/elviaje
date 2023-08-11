@@ -2,7 +2,7 @@
 
 <!--Footer container-->
 @section('footer')
-    <footer class="bg-light text-center">
+    <footer class="bg-primary text-center">
         <!-- Grid container -->
         <div class="container p-4 pb-0">
             <!-- Section: Form -->
@@ -19,7 +19,7 @@
                             <div class="col-auto">
                                 <!-- Submit button -->
                                 @guest
-                                <a href="{{ route('register') }}" class="btn-primary">
+                                <a href="{{ route('register') }}" class="boton-footer">
                                     Register
                                 </a>
                                 @endguest
