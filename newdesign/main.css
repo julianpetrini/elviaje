@@ -233,3 +233,18 @@ a {
             height: 100vh;
         }
 }
+
+
+
+
+
+.supernav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.weather{
+    display: inline-flex;
+}

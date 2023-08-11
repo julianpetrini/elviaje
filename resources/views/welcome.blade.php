@@ -2,6 +2,7 @@
 @include('navbar_weather')
 
 @section('content')
+
     <div class="container-title-box">
         <h1 class="welcome-title text-center">Welcome to Mallorca</h1>
         <p class="lead text-center">
@@ -9,7 +10,7 @@
             Explore the beauty of Mallorca while effortlessly organizing your trip from start to finish.
         </p>
     </div>
-
+    
 
     <!--Vamos a probar con las tarjetas bootstrap-->
     <div class="container-menu">

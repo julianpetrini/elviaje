@@ -275,45 +275,6 @@ a {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.weather-container {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
-
-.weather-info {
-    display: flex;
-    align-items: center;
-    margin-right: 10px;
-}
-
-.weather-info h2 {
-    font-weight: bold;
-    font-family: "Blinker", sans-serif;
-    color: white;
-    margin-right: 10px;
-}
-
-.weather-info img {
-    margin-right: 10px;
-}
-
-.weather-info .temperature {
-    font-size: 20px;
-    font-family: "Blinker", sans-serif;
-    color: white;
-}
-
-.weather-date {
-    font-size: 14px;
-    font-family: "Blinker", sans-serif;
-    color: white;
-    text-align: left;
-}
-
-
 
 .file-input {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -376,8 +337,25 @@ a {
 
 
 
+.weather-container{
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+}
 
+.navbarweather{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+}
 
+.border-none{
+    border:none;
+}
 
 
 
