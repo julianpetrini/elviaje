@@ -4,6 +4,9 @@
 <nav class="navbar navbar-expand-lg bg-transparent">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Mallorca</a>
+        <a class="navbar-brand" href="#">
+            <img src="../imagenes/visiting_icon.png" alt="" width="30" height="24">
+          </a>
 
         <div class="col-sm-12 col-md-6">
             <div class="weather-container">
