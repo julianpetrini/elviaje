@@ -23,164 +23,156 @@
 
 <body class="background-prueba">
 
-    <!-- Desktop simulando mobile -->
-<h1>hola</h1>
 
-    <div class="centrar-mobile-desktop">
-        <img src="assets/mobile.png" alt="Mobile Device" class="mobile-device-img">
-        <div class="phone-container" id="phone">
-            <div class="phone-content">
-                <div class="background-index">
-                    <div class="circle"></div>
-                    <div class="hexagon"></div>
-                    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-                        <div class="container-fluid">
-                            <a class="navbar-brand" href="#">Logo</a>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                                <!-- Oculta el menú en dispositivos móviles -->
-                                <ul class="navbar-nav d-md-none">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page"
-                                            href="{{ route('welcome') }}">HOME</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('agenda.index') }}">AGENDA</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('sleeping.index') }}">HOTEL</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('login') }}">LOG IN</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('register') }}">REGISTER</a>
-                                    </li>
-                                </ul>
+    <!-- Desktop con simulacion de simulando mobile -->
+    <div class="desktop-mobile-container">
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Logo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <!-- Oculta el menú en dispositivos móviles -->
+                    <ul class="navbar-nav d-md-none">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{ route('welcome') }}">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('agenda.index') }}">AGENDA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('sleeping.index') }}">HOTEL</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">LOG IN</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">REGISTER</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+
+        <div class="mid-container-desktop">
+            <div class="container-text p-5">
+                <h1 class="display-1"> Lovsi App</h1>
+                <h2 class="display-6">Welcome to</h2>
+                    <p class="lead">A Web application prototype that empowers users to design and share their
+                        journeys. With Lovsi, you can invite your travel companions, collectively plan itineraries,
+                        accommodations, and later discuss plans, post comments, and share photos. Embark on the discovery!
+                        Designed with a mobile-first approach </p>
+            </div>
+
+
+
+
+            <div class="centrar-mobile-desktop">
+
+                <img src="assets/mobile.png" alt="Mobile Device" class="mobile-device-img">
+                <div class="phone-container" id="phone">
+                    <div class="phone-content">
+                        <div class="background-index">
+                            <div class="circle"></div>
+                            <div class="hexagon"></div>
+
+
+                            <div class="container-title-box">
+                                <h1 class="welcome-title text-center">Welcome to Mallorca</h1>
+                                <p class="lead text-center styled-text">
+                                    Here you can create personalized itineraries, manage your accommodations, leave
+                                    reviews,
+                                    and
+                                    so much
+                                    more.
+                                    Explore the beauty of Mallorca while effortlessly organizing your trip from start to
+                                    finish.
+                                </p>
                             </div>
-                        </div>
-                    </nav>
 
-                    <div class="container-title-box">
-                        <h1 class="welcome-title text-center">Welcome to Mallorca</h1>
-                        <p class="lead text-center styled-text">
-                            Here you can create personalized itineraries, manage your accommodations, leave reviews, and
-                            so much
-                            more.
-                            Explore the beauty of Mallorca while effortlessly organizing your trip from start to finish.
-                        </p>
+                            <div class="weather lead">
+                                <h2 class="lead">Friday</h2>
+                                <img src="/assets/star_white.png" alt="Weather Icon" style="height: 15px; width: 15px;">
+                                <p class="temperature">32°C</p>
+                                <p>11.08.23</p>
+                            </div>
+
+                            <div class="container-menu">
+                                <div class="container-card-welcome">
+                                    <div class="agenda-card-img "><a href="#">
+                                            <h5 class="card-title text-white text-center ">HOTEL</h5>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="container-card-welcome">
+                                    <div class="hotel-card-img "><a href="#">
+                                            <h5 class="card-title text-white text-center ">HOTEL</h5>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="container-card-welcome">
+                                    <div class="agenda-card-img "><a href="#">
+                                            <h5 class="card-title text-white text-center ">HOTEL</h5>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="container-card-welcome">
+                                    <div class="hotel-card-img "><a href="#">
+                                            <h5 class="card-title text-white text-center ">HOTEL</h5>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="container-title-box">
+                                <h1 class="welcome-title text-center">Lovsi Reisen</h1>
+                                <p class="lead text-center">Whether you're planning a relaxing getaway or an exciting
+                                    adventure,
+                                    we've got
+                                    you
+                                    covered. Explore the beauty of Mallorca while effortlessly organizing your trip from
+                                    start
+                                    to finish
+                                </p>
+                            </div>
+
+
+                        </div>
                     </div>
-
-                    <div class="weather lead">
-                        <h2 class="lead">Friday</h2>
-                        <img src="/assets/star_white.png" alt="Weather Icon" style="height: 15px; width: 15px;">
-                        <p class="temperature">32°C</p>
-                        <p>11.08.23</p>
-                    </div>
-
-                    <div class="container-menu">
-                        <div class="container-card-welcome">
-                            <div class="agenda-card-img "><a href="#">
-                                    <h5 class="card-title text-white text-center ">HOTEL</h5>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="container-card-welcome">
-                            <div class="hotel-card-img "><a href="#">
-                                    <h5 class="card-title text-white text-center ">HOTEL</h5>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="container-card-welcome">
-                            <div class="agenda-card-img "><a href="#">
-                                    <h5 class="card-title text-white text-center ">HOTEL</h5>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="container-card-welcome">
-                            <div class="hotel-card-img "><a href="#">
-                                    <h5 class="card-title text-white text-center ">HOTEL</h5>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="container-title-box">
-                        <h1 class="welcome-title text-center">Lovsi Reisen</h1>
-                        <p class="lead text-center">Whether you're planning a relaxing getaway or an exciting adventure,
-                            we've got
-                            you
-                            covered. Explore the beauty of Mallorca while effortlessly organizing your trip from start
-                            to finish
-                        </p>
-                    </div>
-
-                    <footer class="bg-light text-center">
-                        <!-- Grid container -->
-                        <div class="container p-4 pb-0">
-                            <!-- Section: Form -->
-                            <section class="">
-                                <form action="">
-                                    <!--Grid row-->
-                                    <div class="row d-flex justify-content-center">
-                                        <!--Grid column-->
-                                        <div class="col-auto">
-                                            <p class="pt-2">
-                                                <strong>Any plans on your trip?</strong>
-                                            </p>
-
-                                            <div class="col-auto">
-                                                <!-- Submit button -->
-                                                <button type="submit" class="btn btn-primary mb-4">
-                                                    Register
-                                                </button>
-                                            </div>
-                                            <!--Grid column-->
-                                        </div>
-                                        <!--Grid row-->
-                                </form>
-                            </section>
-                            <!-- Section: Form -->
-                        </div>
-                        <!-- Grid container -->
-
-                        <!-- Copyright -->
-                        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                            © 2023 Copyright
-                        </div>
-                        <!-- Copyright -->
-                    </footer>
                 </div>
             </div>
         </div>
-    </div>
 
+
+    </div>
+    <!--version mobile-->
     <div class="native-mobile">
 
         <div class="background-index">
-            <div class="circle"></div>
-            <div class="hexagon"></div>
+
             <nav class="navbar navbar-expand-md navbar-dark bg-dark">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">Logo</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                        aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <!-- Oculta el menú en dispositivos móviles -->
                         <ul class="navbar-nav d-md-none">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page"
-                                    href="{{ route('welcome') }}">HOME</a>
+                                <a class="nav-link active" aria-current="page" href="{{ route('welcome') }}">HOME</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('agenda.index') }}">AGENDA</a>
@@ -198,6 +190,10 @@
                     </div>
                 </div>
             </nav>
+
+            <div class="circle"></div>
+            <div class="hexagon"></div>
+
 
             <div class="container-title-box">
                 <h1 class="welcome-title text-center">Welcome to Mallorca</h1>
@@ -254,45 +250,17 @@
                     covered. Explore the beauty of Mallorca while effortlessly organizing your trip from start
                     to finish
                 </p>
+
             </div>
 
-            <footer class="bg-light text-center">
-                <!-- Grid container -->
-                <div class="container p-4 pb-0">
-                    <!-- Section: Form -->
-                    <section class="">
-                        <form action="">
-                            <!--Grid row-->
-                            <div class="row d-flex justify-content-center">
-                                <!--Grid column-->
-                                <div class="col-auto">
-                                    <p class="pt-2">
-                                        <strong>Any plans on your trip?</strong>
-                                    </p>
 
-                                    <div class="col-auto">
-                                        <!-- Submit button -->
-                                        <button type="submit" class="btn btn-primary mb-4">
-                                            Register
-                                        </button>
-                                    </div>
-                                    <!--Grid column-->
-                                </div>
-                                <!--Grid row-->
-                        </form>
-                    </section>
-                    <!-- Section: Form -->
-                </div>
-                <!-- Grid container -->
 
-                <!-- Copyright -->
-                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                    © 2023 Copyright
-                </div>
-                <!-- Copyright -->
-            </footer>
         </div>
-  
+
+
+
+
+
 
     </div>
 

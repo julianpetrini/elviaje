@@ -51,6 +51,16 @@
     pointer-events: none; /* Evita que la imagen bloquee interacciones con el contenido debajo */
 }
 
+.footie {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.desktop-mobile-container {
+    display: none;
+}
+
 /* Media query para pantallas más grandes (escritorio) */
 @media (min-width: 992px) {
     .background-prueba {
@@ -75,6 +85,21 @@
         width: 100%;
         height: auto;
         overflow-y: scroll;
+    }
+
+    .desktop-mobile-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mid-container-desktop {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 1rem;
+        height: 80vh;
+        width: 1284px;
     }
 }
 
