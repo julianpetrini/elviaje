@@ -1,39 +1,101 @@
-@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Blinker:wght@100;200;300&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
-
-
+@import url("https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Blinker:wght@100;200;300&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.background-index{
+.background-prueba {
     margin: 0;
     padding: 0;
-    background: linear-gradient(0deg, #3D98FB 0%, #99DBF5 70.83%, #A7ECEE 100%);
+    background: linear-gradient(0deg, #3d98fb 0%, #99dbf5 70.83%, #a7ecee 100%);
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+.background-index {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(0deg, #3d98fb 0%, #99dbf5 70.83%, #a7ecee 100%);
     height: 100vw;
     background-attachment: fixed;
 }
 
-/* ACA VIENE LA MOBILE WARNING */
-
-.mobile-warning{
+.centrar-mobile-desktop {
     display: none;
 }
 
+.phone-container {
+    width: 300px; /* Ancho del celular */
+    height: auto; /* Altura del celular */
+    position: relative;
+    overflow: hidden;
+    border: 2px solid black;
+}
 
-.welcome-title{
+.phone-content {
+    width: 100%;
+    height: auto; /* Altura mayor que la del celular */
+    overflow-y: hidden;
+    transition: all 0.3s ease; /* Transición suave */
+    background: linear-gradient(0deg, #3d98fb 0%, #99dbf5 70.83%, #a7ecee 100%);
+}
+
+.phone-content.scrollable {
+    overflow-y: scroll;
+}
+
+.mobile-device-img {
+    position: absolute;
+
+    z-index: 2; /* Asegura que la imagen esté encima de la simulación */
+    pointer-events: none; /* Evita que la imagen bloquee interacciones con el contenido debajo */
+}
+
+/* Media query para pantallas más grandes (escritorio) */
+@media (min-width: 992px) {
+    .background-prueba {
+        /* Aplica estilos para la versión de escritorio */
+        background: linear-gradient(
+            0deg,
+            #3d98fb 0%,
+            #99dbf5 70.83%,
+            #a7ecee 100%
+        );
+    }
+
+    .phone-container {
+        /* Cambia el tamaño y estilos para la versión de escritorio simulando el teléfono */
+        width: 270px;
+        height: 543px;
+        border: 2px solid black;
+    }
+
+    .phone-content {
+        /* Cambia el tamaño y estilos para la versión de escritorio */
+        width: 100%;
+        height: auto;
+        overflow-y: scroll;
+    }
+}
+
+/* ACA VIENE LA MOBILE WARNING */
+
+.mobile-warning {
+    display: none;
+}
+
+.welcome-title {
     color: #495057;
-    font-family: 'Baskerville', serif;
-  
+    font-family: "Baskerville", serif;
+
     font-size: 2.8rem;
-    
 }
-.container-title-box{
+.container-title-box {
     margin: 1rem;
-    padding:12px;
+    padding: 12px;
 }
 
-.container-menu{
+.container-menu {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -43,22 +105,20 @@
     /*gap: 1rem; se lo sacamos para mobile para que quede pegado*/
 }
 
-
 .container-card-welcome {
     display: flex;
-    width: 32rem ;
+    width: 32rem;
     /*margin: 0px 32px 0 32px; se lo sacamos para mobile para que llegue al ancho*/
-    height: 13rem ;
+    height: 13rem;
     border-radius: 15px;
 }
 .card-title {
     position: relative;
     z-index: 1;
-   
 }
 .agenda-card-img {
     position: relative;
-    background-image: url(/assets/welcome_img\ \(1\).jpg);
+    background-image: url(/assets/mallorca1.jpg);
     background-size: cover;
     background-position: center;
     display: flex;
@@ -110,9 +170,8 @@ a {
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;
-    filter: brightness(90%) saturate(20%) opacity(0.);
+    filter: brightness(90%) saturate(20%) opacity(0);
 }
-
 
 .hexagon {
     position: absolute;
@@ -127,12 +186,6 @@ a {
     z-index: -1;
     filter: brightness(90%) saturate(70%) opacity(0.4);
 }
-
-
-
-
-
-
 
 /* Styles for screens from 768px to 991px (tablets) */
 @media (min-width: 768px) and (max-width: 991px) {
@@ -172,18 +225,32 @@ a {
 
 /* Styles for screens 992px and above (desktop) */
 @media (min-width: 992px) {
+    .native-mobile {
+        display: none;
+    }
 
-    .mobile-warning{
+    .centrar-mobile-desktop {
+        padding: 6rem;
+        display: flex;
+        align-items: center;
+        height: 60vh;
+        background-attachment: fixed;
+        justify-content: space-between;
+    }
+
+    .phone-container .navbar-toggler {
+        /* Aplicar estilos específicos para el botón de despliegue en versión "handy" */
+        display: none; /* Ocultar el botón de despliegue en versión "handy" simulada */
+    }
+
+    .phone-container .navbar-collapse {
+        /* Mostrar el menú en versión "handy" simulada en escritorio */
+        display: block !important;
+    }
+
+    .mobile-warning {
         display: block;
         color: red;
-    }
-
-    .container-menu{
-        margin: 0 12rem;
-    }
-    .container-title-box {
-        margin: 3rem 9rem;
-        padding: 12px;
     }
 
     .hexagon {
@@ -197,7 +264,7 @@ a {
         background-size: cover;
         background-repeat: no-repeat;
         z-index: -1;
-        filter: brightness(90%) saturate(70%) opacity(0.);
+        filter: brightness(90%) saturate(70%) opacity(0);
     }
 
     .circle {
@@ -210,10 +277,9 @@ a {
         background-size: cover;
         background-repeat: no-repeat;
         z-index: -1;
-        filter: brightness(90%) saturate(20%) opacity(0.);
+        filter: brightness(90%) saturate(20%) opacity(0);
     }
 }
-
 
 /* Landscape orientation - Mobile styles */
 @media (min-width: 100px) and (orientation: landscape) {
@@ -221,41 +287,35 @@ a {
     .hexagon {
         position: absolute;
         top: 27%;
-        right: 20%;}
+        right: 20%;
+    }
 
-        .circle {
-            position: absolute;
-            top: 31%;
-            left: 11%;
-        }
+    .circle {
+        position: absolute;
+        top: 31%;
+        left: 11%;
+    }
 
-        .background-index{
-            height: 100vh;
-        }
+    .background-index {
+        height: 100vh;
+    }
 }
 
-
-
-
-
-.supernav{
+.supernav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 15px;
 }
 
-.weather{
+.weather {
     display: inline-flex;
 }
 
-
-
-
 .styled-text {
     padding: 10px;
-    background: linear-gradient(0deg, #3D98FB 0%, #99DBF5 70.83%, #A7ECEE 100%);
+    background: linear-gradient(0deg, #3d98fb 0%, #99dbf5 70.83%, #a7ecee 100%);
     color: white;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
+}
