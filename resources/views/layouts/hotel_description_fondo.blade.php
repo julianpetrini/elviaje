@@ -32,8 +32,8 @@
     
 
 
-    <div class="circle"></div>
-    <div class="hexagon"></div>
+   <!-- <div class="circle"></div>
+    <div class="hexagon"></div>-->
 
 
     @yield('weather')

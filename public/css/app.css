@@ -25,7 +25,7 @@
 
 .phone-content {
     width: 100%;
-    height: auto; /* Altura mayor que la del celular */
+    height: 100%;
     overflow-y: hidden;
     transition: all 0.3s ease; /* Transición suave */
     /*background: linear-gradient(0deg, #3d98fb 0%, #99dbf5 70.83%, #a7ecee 100%);*/

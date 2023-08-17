@@ -25,17 +25,15 @@
                         <div class="background-index">
                             <div class="circle"></div>
                             <div class="hexagon"></div>
-
-                            <div class="container-title-box">
-                                <h1 class="welcome-title text-center">Welcome to Mallorca</h1>
-                                <p class="lead text-center">
-                                    Here you can create personalized itineraries, manage your accommodations, leave reviews,
-                                    and so much more.
-                                    Explore the beauty of Mallorca while effortlessly organizing your trip from start to
-                                    finish.
-                                </p>
-                            </div>
-
+                            <!--
+                                <div class="container-title-box">
+                                    <h1 class="display-6 text-center">Lovsi Reisen</h1>
+                                    <p class="fs-6 text-center">
+                                        Here you can create personalized itineraries, manage your accommodations, leave reviews,
+                                        and so much more.
+                                    </p>
+                                </div>
+                            -->
 
                             <!--Vamos a probar con las tarjetas bootstrap-->
                             <div class="container-menu">
@@ -74,6 +72,14 @@
                                             </div>
                                         </div>
                                     </a>
+
+                                    <div class="container-title-box">
+                                        <h1 class="welcome-title text-center">Lovsi Reisen</h1>
+                                        <p class="lead text-center">Whether you're planning a relaxing getaway or an exciting
+                                            adventure, we've got you
+                                            covered. Explore the beauty of Mallorca while effortlessly organizing your trip from
+                                            start to finish </p>
+                                    </div>
                                 @endguest
                                 @auth
                                     <a href="{{ route('agenda.create') }}" class="btn-primary">
@@ -93,17 +99,19 @@
                                         </div>
                                     </a>
 
+                                    <div class="container-title-box">
+                                        <h1 class="welcome-title text-center">Lovsi Reisen</h1>
+                                        <p class="lead text-center">Whether you're planning a relaxing getaway or an exciting
+                                            adventure, we've got you
+                                            covered. Explore the beauty of Mallorca while effortlessly organizing your trip from
+                                            start to finish </p>
+                                    </div>
+
                                 @endauth
 
                             </div>
 
-                            <div class="container-title-box">
-                                <h1 class="welcome-title text-center">Lovsi Reisen</h1>
-                                <p class="lead text-center">Whether you're planning a relaxing getaway or an exciting
-                                    adventure, we've got you
-                                    covered. Explore the beauty of Mallorca while effortlessly organizing your trip from
-                                    start to finish </p>
-                            </div>
+
 
                         </div>
 
@@ -114,5 +122,5 @@
     </div>
 
 
- @include('footer')
+    @include('footer')
 @endsection
