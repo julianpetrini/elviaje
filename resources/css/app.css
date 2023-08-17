@@ -13,6 +13,101 @@
 }
 
 
+
+
+.centrar-mobile-desktop {
+    display: none;
+}
+
+.phone-container {
+    width: 300px; /* Ancho del celular */
+    height: auto; /* Altura del celular */
+    position: relative;
+    overflow: hidden;
+    border: 2px solid black;
+}
+
+.phone-content {
+    width: 100%;
+    height: auto; /* Altura mayor que la del celular */
+    overflow-y: hidden;
+    transition: all 0.3s ease; /* Transición suave */
+    background: linear-gradient(0deg, #3d98fb 0%, #99dbf5 70.83%, #a7ecee 100%);
+}
+
+.phone-content.scrollable {
+    overflow-y: scroll;
+}
+
+.mobile-device-img {
+    position: absolute;
+
+    z-index: 2; /* Asegura que la imagen esté encima de la simulación */
+    pointer-events: none; /* Evita que la imagen bloquee interacciones con el contenido debajo */
+}
+
+.footie {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+.desktop-mobile-container {
+    display: none;
+}
+
+/* Media query para pantallas más grandes (escritorio) */
+@media (min-width: 992px) {
+    .background-prueba {
+        /* Aplica estilos para la versión de escritorio */
+        background: linear-gradient(
+            0deg,
+            #3d98fb 0%,
+            #99dbf5 70.83%,
+            #a7ecee 100%
+        );
+    }
+
+    .phone-container {
+        /* Cambia el tamaño y estilos para la versión de escritorio simulando el teléfono */
+        width: 270px;
+        height: 543px;
+        border: 2px solid black;
+    }
+
+    .phone-content {
+        /* Cambia el tamaño y estilos para la versión de escritorio */
+        width: 100%;
+        height: auto;
+        overflow-y: scroll;
+    }
+
+    .desktop-mobile-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mid-container-desktop {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 1rem;
+        height: 80vh;
+        width: 1284px;
+    }
+}
+
+
+
+
+
+
+
+
+
 .welcome-title{
     color: #495057;
     font-family: 'Libre Baskerville', serif;
@@ -23,8 +118,8 @@
 .container-title-box{
     margin: 1rem;
     padding:12px;
-    white-space: normal;
-    overflow: hidden;
+    /*white-space: normal; */
+    /*overflow: hidden;*/
 }
 
 .container-menu{
@@ -88,6 +183,8 @@
     left: 0;
     background-color: rgba(173, 216, 230, 0.5);
 }
+
+
 
 .create-agenda-card-img {
     position: relative;
@@ -187,16 +284,37 @@ a {
 /* Styles for screens 992px and above (desktop) */
 @media (min-width: 992px) {
 
+    .native-mobile {
+        display: none;
+    }
+
+    .centrar-mobile-desktop {
+        padding: 6rem;
+        display: flex;
+        align-items: center;
+        height: 60vh;
+        background-attachment: fixed;
+        justify-content: space-between;
+    }
+
+    .phone-container .navbar-toggler {
+        /* Aplicar estilos específicos para el botón de despliegue en versión "handy" */
+        display: none; /* Ocultar el botón de despliegue en versión "handy" simulada */
+    }
+
+    .phone-container .navbar-collapse {
+        /* Mostrar el menú en versión "handy" simulada en escritorio */
+        display: block !important;
+    }
+
     .mobile-warning{
         display: block;
         color: red;
     }
 
-    .container-menu{
-        margin: 0 12rem;
-    }
+  
     .container-title-box {
-        margin: 3rem 9rem;
+        margin: 1rem;
         padding: 12px;
     }
 
@@ -248,7 +366,12 @@ a {
         }
 }
 
-
+.supernav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px;
+}
 
 
 
