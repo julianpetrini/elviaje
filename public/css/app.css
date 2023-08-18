@@ -1,21 +1,20 @@
 @import url(https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Blinker:wght@100;200;300;400;600;700;800&display=swap);
+.native-mobile {
+    display: flex;
+    justify-content: center;
+}
 
-.background-index{
+.background-index {
     margin: 0;
     padding: 0;
-    background: linear-gradient(0deg, #3D98FB 0%, #99DBF5 70.83%, #A7ECEE 100%);
+    background: linear-gradient(0deg, #3d98fb 0%, #99dbf5 70.83%, #a7ecee 100%);
     height: 100vw;
     background-attachment: fixed;
 }
 
-
-
-
 .centrar-mobile-desktop {
     display: none;
 }
-
-
 
 .phone-content {
     width: 100%;
@@ -42,14 +41,41 @@
     width: 100%;
 }
 
-
-
 .desktop-mobile-container {
     display: none;
 }
 
+.container-menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    max-width: 500px;
+}
+
 /* Media query para pantallas más grandes (escritorio) */
 @media (min-width: 992px) {
+    .container-menu {
+        width: 213px;
+        /*gap: 1rem; se lo sacamos para mobile para que quede pegado*/
+    }
+
+    .native-mobile {
+        display: none;
+    }
+
+    .centrar-mobile-desktop {
+        padding: 6rem;
+        display: flex;
+        align-items: center;
+        height: 60vh;
+        background-attachment: fixed;
+        justify-content: center;
+    }
+
     .background-prueba {
         /* Aplica estilos para la versión de escritorio */
         background: linear-gradient(
@@ -92,52 +118,86 @@
         max-width: 1284px;
         width: 95vw;
     }
+
+    .phone-container .navbar-toggler {
+        /* Aplicar estilos específicos para el botón de despliegue en versión "handy" */
+        display: none; /* Ocultar el botón de despliegue en versión "handy" simulada */
+    }
+
+    .phone-container .navbar-collapse {
+        /* Mostrar el menú en versión "handy" simulada en escritorio */
+        display: block !important;
+    }
+
+    .mobile-warning {
+        display: block;
+        color: red;
+    }
+
+    .container-title-box {
+        margin: 1rem;
+        padding: 12px;
+    }
+
+    .hexagon {
+        position: absolute;
+        top: 18%;
+        right: -8%;
+        /* transform: translate(50%, -50%); */
+        width: 29rem;
+        height: 29rem;
+        background-image: url(/imagenes/Star_1.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: -1;
+        filter: brightness(90%) saturate(70%) opacity(0);
+    }
+
+    .circle {
+        position: absolute;
+        top: 81%;
+        left: -4%;
+        width: 24rem;
+        height: 24rem;
+        background-image: url(/imagenes/Star_3.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: -1;
+        filter: brightness(90%) saturate(20%) opacity(0);
+    }
 }
 
-
-
-
-
-
-
-
-
-.welcome-title{
+.welcome-title {
     color: #495057;
-    font-family: 'Libre Baskerville', serif;
+    font-family: "Libre Baskerville", serif;
     font-weight: 400;
     font-size: 2.8rem;
-    
 }
-.container-title-box{
+.container-title-box {
     margin: 1rem;
-    padding:12px;
+    padding: 12px;
     /*white-space: normal; */
     /*overflow: hidden;*/
 }
 
-.container-menu{
+.container-card-welcome-desktop {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    /*gap: 1rem; se lo sacamos para mobile para que quede pegado*/
+    width: 100%;
+    /*margin: 0px 32px 0 32px; se lo sacamos para mobile para que llegue al ancho*/
+    height: 113px;
+    border-radius: 15px;
 }
-
 
 .container-card-welcome {
     display: flex;
-    width: 32rem ;
+    width: 100%;
     /*margin: 0px 32px 0 32px; se lo sacamos para mobile para que llegue al ancho*/
-    height: 13rem ;
+    height: 168px;
     border-radius: 15px;
 }
 .card-title {
     position: relative;
     z-index: 1;
-   
 }
 .agenda-card-img {
     position: relative;
@@ -158,6 +218,27 @@
     left: 0;
     background-color: rgba(173, 216, 230, 0.2);
 }
+
+.agenda-card-img-desktop {
+    position: relative;
+    background-image: url(/imagenes/welcome_img2.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.agenda-card-img-desktop::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(173, 216, 230, 0.2);
+}
+
 .hotel-card-img {
     position: relative;
     background-image: url(/imagenes/welcome_img_hotel.jpg);
@@ -178,7 +259,25 @@
     background-color: rgba(173, 216, 230, 0.5);
 }
 
-
+.hotel-card-img-desktop {
+    position: relative;
+    background-image: url(/imagenes/welcome_img_hotel.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.hotel-card-img-desktop::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(173, 216, 230, 0.5);
+}
 
 .create-agenda-card-img {
     position: relative;
@@ -215,9 +314,8 @@ a {
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;
-    filter: brightness(90%) saturate(20%) opacity(0.);
+    filter: brightness(90%) saturate(20%) opacity(0);
 }
-
 
 .hexagon {
     position: absolute;
@@ -232,12 +330,6 @@ a {
     z-index: -1;
     filter: brightness(90%) saturate(70%) opacity(0.4);
 }
-
-
-
-
-
-
 
 /* Styles for screens from 768px to 991px (tablets) */
 @media (min-width: 768px) and (max-width: 991px) {
@@ -275,71 +367,16 @@ a {
     }
 }
 
-/* Styles for screens 992px and above (desktop) */
-@media (min-width: 992px) {
+@media (min-height: 400px) and (max-height: 700px) {
+    /* Agrega aquí tus reglas de estilo para pantallas medianas */
 
-    .native-mobile {
-        display: none;
+    .mobile-device-img {
+        height: 367px;
     }
-
-    .centrar-mobile-desktop {
-        padding: 6rem;
-        display: flex;
-        align-items: center;
-        height: 60vh;
-        background-attachment: fixed;
-        justify-content: space-between;
-    }
-
-    .phone-container .navbar-toggler {
-        /* Aplicar estilos específicos para el botón de despliegue en versión "handy" */
-        display: none; /* Ocultar el botón de despliegue en versión "handy" simulada */
-    }
-
-    .phone-container .navbar-collapse {
-        /* Mostrar el menú en versión "handy" simulada en escritorio */
-        display: block !important;
-    }
-
-    .mobile-warning{
-        display: block;
-        color: red;
-    }
-
-  
-    .container-title-box {
-        margin: 1rem;
-        padding: 12px;
-    }
-
-    .hexagon {
-        position: absolute;
-        top: 18%;
-        right: -8%;
-        /* transform: translate(50%, -50%); */
-        width: 29rem;
-        height: 29rem;
-        background-image: url(/imagenes/Star_1.png);
-        background-size: cover;
-        background-repeat: no-repeat;
-        z-index: -1;
-        filter: brightness(90%) saturate(70%) opacity(0.);
-    }
-
-    .circle {
-        position: absolute;
-        top: 81%;
-        left: -4%;
-        width: 24rem;
-        height: 24rem;
-        background-image: url(/imagenes/Star_3.png);
-        background-size: cover;
-        background-repeat: no-repeat;
-        z-index: -1;
-        filter: brightness(90%) saturate(20%) opacity(0.);
+    .phone-container {
+        
     }
 }
-
 
 /* Landscape orientation - Mobile styles */
 @media (min-width: 100px) and (orientation: landscape) {
@@ -347,17 +384,18 @@ a {
     .hexagon {
         position: absolute;
         top: 27%;
-        right: 20%;}
+        right: 20%;
+    }
 
-        .circle {
-            position: absolute;
-            top: 31%;
-            left: 11%;
-        }
+    .circle {
+        position: absolute;
+        top: 31%;
+        left: 11%;
+    }
 
-        .background-index{
-            height: 100vh;
-        }
+    .background-index {
+        height: 100vh;
+    }
 }
 
 .supernav {
@@ -366,8 +404,6 @@ a {
     justify-content: space-between;
     padding: 15px;
 }
-
-
 
 /* aca esta lo viejo */
 
@@ -391,7 +427,6 @@ a {
 .form-group input {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
 
 .file-input {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -452,9 +487,7 @@ a {
     z-index: 1;
 }
 
-
-
-.weather-container{
+.weather-container {
     display: flex;
     align-content: center;
     flex-wrap: wrap;
@@ -462,7 +495,7 @@ a {
     align-items: flex-end;
 }
 
-.navbarweather{
+.navbarweather {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -470,23 +503,11 @@ a {
     border: none;
 }
 
-boton-footer{
+boton-footer {
     color: white;
     font-weight: 500;
     background: black;
     padding: 12;
     border-radius: 15px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -24,13 +24,7 @@
     display: none;
 }
 
-.phone-container {
-    width: 231px;
-    height: 459px;
-    position: relative;
-    overflow: hidden;
-    border: 2px solid black;
-}
+
 
 .phone-content {
     width: 100%;
@@ -61,8 +55,36 @@
     display: none;
 }
 
+.phone-container {
+    /* Cambia el tamaño y estilos para la versión de escritorio simulando el teléfono */
+    width: 217px;
+    height: 470px;
+    border: 2px solid black;
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+@media (min-height: 400px) and (max-height: 700px) {
+    /* Agrega aquí tus reglas de estilo para pantallas medianas */
+
+    .mobile-device-img{
+        height: 367px;
+    }
+    .phone-container {
+        width: 170px;
+        height: 360px;}
+
+    
+}
+
+
 /* Media query para pantallas más grandes (escritorio) */
-@media (min-width: 992px) {
+@media (min-width: 552px) {
+
+    .native-mobile {
+        display: none;
+    }
     .background-prueba {
         /* Aplica estilos para la versión de escritorio */
         background: linear-gradient(
@@ -73,15 +95,7 @@
         );
     }
 
-    .phone-container {
-        /* Cambia el tamaño y estilos para la versión de escritorio simulando el teléfono */
-        width: 217px;
-        height: 470px;
-        border: 2px solid black;
-        position: relative;
-        overflow: hidden;
-        border-radius: 30px;
-    }
+    
 
     .phone-content {
         /* Cambia el tamaño y estilos para la versión de escritorio */
@@ -136,9 +150,9 @@
 
 .container-card-welcome {
     display: flex;
-    width: 32rem;
+    width: 100%;
     /*margin: 0px 32px 0 32px; se lo sacamos para mobile para que llegue al ancho*/
-    height: 13rem;
+    height: 30vh;
     border-radius: 15px;
 }
 .card-title {
@@ -216,47 +230,14 @@ a {
     filter: brightness(90%) saturate(70%) opacity(0.4);
 }
 
-/* Styles for screens from 768px to 991px (tablets) */
-@media (min-width: 768px) and (max-width: 991px) {
-    .container-title-box {
-        margin: 1rem;
-        padding: 12px;
-    }
-
-    .circle {
-        position: absolute;
-        top: 68%;
-        left: -15%;
-        width: 22rem;
-        height: 22rem;
-        background-image: url(/assets/Star_3.png);
-        background-size: cover;
-        background-repeat: no-repeat;
-        z-index: -1;
-        filter: brightness(90%) saturate(40%);
-    }
-
-    .hexagon {
-        position: absolute;
-        top: 12%;
-        left: 50%;
-        /* right: -19%; */
-        /* transform: translate(50%, -50%); */
-        width: 23rem;
-        height: 23rem;
-        background-image: url(/assets/Star_1.png);
-        background-size: cover;
-        background-repeat: no-repeat;
-        z-index: -1;
-        filter: brightness(90%) saturate(70%) opacity(0.4);
-    }
-}
 
 /* Styles for screens 992px and above (desktop) */
-@media (min-width: 992px) {
-    .native-mobile {
-        display: none;
+@media (min-width: 512px) {
+
+    .container-card-welcome{
+        height:  12vh;
     }
+    
 
     .centrar-mobile-desktop {
         padding: 6rem;

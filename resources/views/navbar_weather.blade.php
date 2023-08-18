@@ -14,7 +14,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav mx-auto align-items-center">
                 <li class="nav-item d-none d-lg-block">
                     <!-- Esta sección se mostrará solo en dispositivos de escritorio -->
                     <div class="weather-container">
