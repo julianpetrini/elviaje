@@ -19,13 +19,7 @@
     display: none;
 }
 
-.phone-container {
-    width: 300px; /* Ancho del celular */
-    height: auto; /* Altura del celular */
-    position: relative;
-    overflow: hidden;
-    border: 2px solid black;
-}
+
 
 .phone-content {
     width: 100%;
@@ -41,7 +35,7 @@
 
 .mobile-device-img {
     position: absolute;
-
+    height: 470px;
     z-index: 2; /* Asegura que la imagen esté encima de la simulación */
     pointer-events: none; /* Evita que la imagen bloquee interacciones con el contenido debajo */
 }
@@ -72,9 +66,12 @@
 
     .phone-container {
         /* Cambia el tamaño y estilos para la versión de escritorio simulando el teléfono */
-        width: 270px;
-        height: 543px;
+        width: 217px;
+        height: 470px;
         border: 2px solid black;
+        position: relative;
+        overflow: hidden;
+        border-radius: 30px;
     }
 
     .phone-content {
