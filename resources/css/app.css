@@ -13,6 +13,18 @@
     background-attachment: fixed;
 }
 
+.weather-container {
+    display: none;
+}
+
+.weather-container-mob{
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+}
+
 .centrar-mobile-desktop {
     display: none;
 }
@@ -63,6 +75,15 @@
         width: 213px;
         /*gap: 1rem; se lo sacamos para mobile para que quede pegado*/
     }
+
+    .weather-container {
+        display: flex;
+        align-content: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-end;
+    }
+    
 
     .native-mobile {
         display: none;
@@ -479,13 +500,7 @@ a {
     z-index: 1;
 }
 
-.weather-container {
-    display: flex;
-    align-content: center;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-end;
-}
+
 
 .navbarweather {
     width: 100%;

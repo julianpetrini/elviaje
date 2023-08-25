@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <button class="navbar-toggler navbarweather" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <div class="weather-container d-lg-none">
+            <div class="weather-container-mob d-lg-none">
                 <!-- Esta sección se mostrará solo en dispositivos móviles -->
                 <p class="temperature">{{ $weatherData['currentDay'] }}</p>
                 <img src="{{ $weatherData['weatherIcon'] }}" alt="Weather Icon">
