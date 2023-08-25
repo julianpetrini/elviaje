@@ -1,6 +1,6 @@
 
 
-<nav class="navbar navbar-expand-lg bg-transparent">
+<nav class="navbar navbar-expand-lg bg-transparent nav-margin-bottom">
     <div class="container-fluid">
         <button class="navbar-toggler navbarweather" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,16 +13,18 @@
             </div>
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <div class="collapse navbar-collapse orden-nav-desktop" id="navbarNavDropdown">
+            <div class="weather-container">
+                <p class="temperature">{{ $weatherData['currentDay'] }}</p>
+                <img src="{{ $weatherData['weatherIcon'] }}" alt="Weather Icon">
+                <p class="temperature">{{ $weatherData['temperature'] }} °C</p>
+                <p>{{ $weatherData['currentDate'] }}</p>
+            </div>
             <ul class="navbar-nav mx-auto align-items-center">
+               
                 <li class="nav-item d-none d-lg-block">
                     <!-- Esta sección se mostrará solo en dispositivos de escritorio -->
-                    <div class="weather-container">
-                        <p class="temperature">{{ $weatherData['currentDay'] }}</p>
-                        <img src="{{ $weatherData['weatherIcon'] }}" alt="Weather Icon">
-                        <p class="temperature">{{ $weatherData['temperature'] }} °C</p>
-                        <p>{{ $weatherData['currentDate'] }}</p>
-                    </div>
+                  
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{ route('welcome') }}">HOME</a>

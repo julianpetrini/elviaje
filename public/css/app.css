@@ -367,16 +367,7 @@ a {
     }
 }
 
-@media (min-height: 400px) and (max-height: 700px) {
-    /* Agrega aquí tus reglas de estilo para pantallas medianas */
 
-    .mobile-device-img {
-        height: 367px;
-    }
-    .phone-container {
-        
-    }
-}
 
 /* Landscape orientation - Mobile styles */
 @media (min-width: 100px) and (orientation: landscape) {
@@ -501,6 +492,14 @@ a {
     justify-content: space-between;
     align-items: center;
     border: none;
+}
+
+.nav-margin-bottom{
+    margin-bottom: 3rem;
+}
+.orden-nav-desktop{
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 boton-footer {
